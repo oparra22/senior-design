@@ -1,0 +1,23 @@
+-Download and install Github Desktop
+-Open the Github Shell and wait for it to load
+-Navigate to your directory in which you wish to setup your local repository
+-These would be the normal commands to setup the git initially:
+	1. git init
+	2. echo "test document">>test_doc.txt
+	3. git add test_doc.txt
+	4. git commit -m "First commmit"
+	5. git remote add origin https://github.com/oparra22/seniod-design.git
+	6. git push -u origin master
+
+- But since I have already pushed to Github, You will just need to do steps 1 and 5 and then this additional step:
+	7. git pull origin master
+-This should pull the data to your local repository before you make any changes so that you have the most up to date repository
+
+Note:I will also be uploading the official tutorial from our Software Engineering Course.
+
+
+DO NOT FORGET TO WRITE A MEANINGFUL COMMIT MESSAGE BEFORE YOU PUSH TO THE MASTER!!
+
+To add all changed items to be committed type the following command:
+git add --all
+otherwise you can add individual files by replacing "--all" with a filename or directory
