@@ -24,10 +24,18 @@ namespace GCITester
             InitializeComponent();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+
+        private void open_port_button_Click(object sender, RoutedEventArgs e)
         {
-           // MainWindow window = new MainWindow();
-           // window.Show();
+            // MainWindow window = new MainWindow();
+            // window.Show();
+            //this.Close();
+        }
+
+        private void back_to_menu_button_Click(object sender, RoutedEventArgs e)
+        {
+            // MainWindow window = new MainWindow();
+            // window.Show();
             //this.Close();
         }
     }

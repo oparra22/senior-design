@@ -8,7 +8,8 @@
         Title="settings" Height="428.835" Width="794.807">
     <Grid>
         <Image x:Name="image" HorizontalAlignment="Left" Height="84" Margin="10,10,0,0" VerticalAlignment="Top" Width="277" Source="GCILogo.jpg"/>
-        <Button x:Name="button" Content="Back to Menu" HorizontalAlignment="Left" Margin="10,99,0,0" VerticalAlignment="Top" Width="223" Height="48" Background="#FF15315F" Foreground="White" FontSize="20" FontFamily="Microsoft JhengHei UI" FontWeight="Bold" Click="button_Click"/>
+        <Button x:Name="BackToMenuBtn" Content="Back to Menu" HorizontalAlignment="Left" Margin="10,323,0,0" VerticalAlignment="Top" Width="223" Height="48" Background="#FF15315F" Foreground="White" FontSize="20" FontFamily="Microsoft JhengHei UI" FontWeight="Bold" Click="back_to_menu_button_Click"/>
+        <Button x:Name="OpenPortBtn" Content="Open Port" HorizontalAlignment="Left" Margin="10,255,0,0" VerticalAlignment="Top" Width="223" Height="48" Background="#FF15315F" Foreground="White" FontSize="20" FontFamily="Microsoft JhengHei UI" FontWeight="Bold" Click="open_port_button_Click"/>
 
     </Grid>
 </Window>
