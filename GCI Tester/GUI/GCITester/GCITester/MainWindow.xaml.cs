@@ -27,7 +27,7 @@ namespace GCITester
 
         private void button_Copy7_Click(object sender, RoutedEventArgs e)
         {
-            settings window = new settings();
+            Settings window = new Settings();
             window.Show();
             //this.Close();
         }
