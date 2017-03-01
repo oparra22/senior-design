@@ -15,19 +15,31 @@ using System.Windows.Shapes;
 namespace GCITester
 {
     /// <summary>
-    /// Interaction logic for settings.xaml
+    /// Interaction logic for Settings.xaml
     /// </summary>
-    public partial class settings : Window
+    public partial class Settings : Window
     {
-        public settings()
+        public Settings()
         {
             InitializeComponent();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        //This is the logic to occur when the "Open Port" Button is pressed
+        private void port_settings_button_Click(object sender, RoutedEventArgs e)
         {
-           // MainWindow window = new MainWindow();
-           // window.Show();
+            //MessageBox.Show($"open port - sender: {sender} \n e: {e}");
+            //We will be opening the port with the following command, meaning we need to create a Communication.cs file
+            //Communication.OpenPort();
+            
+        }
+
+        //This is the logic to occur when the "Back To Menu" Button is pressed
+        private void back_to_menu_button_Click(object sender, RoutedEventArgs e)
+        {
+            //MessageBox.Show($"back to menu - sender: {sender} \n e: {e}");
+
+            // MainWindow window = new MainWindow();
+            // window.Show();
             //this.Close();
         }
     }

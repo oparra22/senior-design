@@ -14,3 +14,19 @@ C:\Users\oparr\Documents\UCCS\4-Senior\SPRING 2017\senior-design\GCI Tester\GUI\
 C:\Users\oparr\Documents\UCCS\4-Senior\SPRING 2017\senior-design\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.csproj.GenerateResource.Cache
 C:\Users\oparr\Documents\UCCS\4-Senior\SPRING 2017\senior-design\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.exe
 C:\Users\oparr\Documents\UCCS\4-Senior\SPRING 2017\senior-design\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.pdb
+C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\bin\Debug\GCITester.exe.config
+C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.exe
+C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.pdb
+C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\bin\Debug\GCITester.exe
+C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\bin\Debug\GCITester.pdb
+C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.csprojResolveAssemblyReference.cache
+C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\MainWindow.g.cs
+C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\settings.g.cs
+C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\App.g.cs
+C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester_MarkupCompile.cache
+C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester_MarkupCompile.lref
+C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\MainWindow.baml
+C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\settings.baml
+C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.g.resources
+C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.Properties.Resources.resources
+C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.csproj.GenerateResource.Cache
