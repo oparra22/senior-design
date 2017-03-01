@@ -13,6 +13,7 @@ namespace GCITester
     public partial class SerialPortSettings : UserControl
     {
         String _COMPort = String.Empty;
+        
         int _BaudRate = 9600;
         int _DataBits = 8;
         StopBits _StopBit = StopBits.One;
@@ -40,6 +41,25 @@ namespace GCITester
                 comboCOMPort.Text = _COMPort;
             }
         }
+        public int[] BaudRatesList
+        {
+            get
+            {
+                int[] baudRates = {9600, 14400, 19200,28800,38400,56000,57600,115200 };
+                
+                return baudRates;
+            }
+        }
+        public int[] DataBitsList
+        {
+            get
+            {
+                int[] baudRates = { 5,6,7,8 };
+
+                return baudRates;
+            }
+        }
+
 
         public int BaudRate
         {

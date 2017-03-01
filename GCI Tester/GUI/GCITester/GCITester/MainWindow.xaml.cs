@@ -23,6 +23,7 @@ namespace GCITester
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
         private void button_Copy7_Click(object sender, RoutedEventArgs e)

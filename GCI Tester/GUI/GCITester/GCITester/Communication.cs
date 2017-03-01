@@ -14,7 +14,7 @@ namespace GCITester
     class Communication
     {
         //This class is responsible for Communication, mostly handling the serial port information!
-
+        
         //Variables from previous system
         public static SerialPort comPort = new SerialPort();    //Create the port Object
         public static byte[] RecvBuffer = new Byte[0xFFFF];     //Initialize the Receiving Buffer to 0xFFFF - Why?

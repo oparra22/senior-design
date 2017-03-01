@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,7 @@ namespace GCITester
         {
             InitializeComponent();
             InitializeValues();
+           
 
 
         }
@@ -119,8 +121,9 @@ namespace GCITester
         //Save settings method to save the settings
         private void SaveSettings()
         {
-            
+
             Properties.Settings.Default.ComPort = serialPortSettings.COMPort;
+            MessageBox.Show($"baud before save{serialPortSettings.BaudRate}");
             Properties.Settings.Default.BaudRate = serialPortSettings.BaudRate;
             Properties.Settings.Default.DataBits = serialPortSettings.DataBits;
             Properties.Settings.Default.Parity = serialPortSettings.Parity;
@@ -167,7 +170,13 @@ namespace GCITester
         //Com Port Label and Box
         private void comPort_comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            var comboBox = sender as ComboBox;
+            //comboBox.ItemsSource = serialPortSettings.BaudRatesList;
+            //serialPortSettings.BaudRate = Convert.ToInt32(comboBox.SelectedValue);
+            ////comboBox.Text = serialPortSettings.BaudRate.ToString();
+            ////MessageBox.Show($"Menu changed after assignment: baudRate: {serialPortSettings.BaudRate}");
+            serialPortSettings.COMPort = Convert.ToString(comboBox.SelectedValue);
+            comLabel.Content = serialPortSettings.COMPort;
         }
         private void comPort_comboBox_Loaded(object sender, RoutedEventArgs e)
         {
@@ -181,46 +190,61 @@ namespace GCITester
             //this.serialPortSettings.TabIndex = 0;
             var comboBox = sender as ComboBox;
             comboBox.ItemsSource = serialPortSettings.ComPortList;
-            //MessageBox.Show($"e: {e}");
+            MessageBox.Show($"port chosen: {serialPortSettings.COMPort}");
             comboBox.SelectedIndex = 0;
+            serialPortSettings.COMPort = comboBox.Text;
+            
 
         }
 
         //methods for the Baud rate
         private void baudRate_comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            var comboBox = sender as ComboBox;
+            //comboBox.ItemsSource = serialPortSettings.BaudRatesList;
+            //serialPortSettings.BaudRate = Convert.ToInt32(comboBox.SelectedValue);
+            ////comboBox.Text = serialPortSettings.BaudRate.ToString();
+            ////MessageBox.Show($"Menu changed after assignment: baudRate: {serialPortSettings.BaudRate}");
+            serialPortSettings.BaudRate = Convert.ToInt32(comboBox.SelectedValue);
+            baudLabel.Content = serialPortSettings.BaudRate;
         }
         private void baudRate_comboBox_Loaded(object sender, RoutedEventArgs e)
         {
-            /*List<string> data = new List<string>();
-            data.Add("9600");
-            data.Add("14400");
-            data.Add("19200");
-            data.Add("28800");
-            data.Add("38400");
-            data.Add("56000");
-            data.Add("57600");
-            data.Add("115200");
+            //MessageBox.Show($"baudrateLoad: {serialPortSettings.BaudRate}");
+            //var comboBox = sender as ComboBox;
+            ////MessageBox.Show($"{ comboBox}");
+            ////string baudString = serialPortSettings.BaudRate.ToString();
+            //comboBox.ItemsSource = serialPortSettings.BaudRatesList;
+            ////MessageBox.Show($"{ comboBox.Text}");
+            ////serialPortSettings.BaudRate = Convert.ToInt32(comboBox.Text);
+            ////comboBox.ItemStringFormat = serialPortSettings.BaudRate;
+            //comboBox.SelectedIndex = Convert.ToInt32(comboBox.FindName($"{serialPortSettings.BaudRate}"));
+            ////MessageBox.Show($"Selected Index: {comboBox.SelectedIndex}");
+            ////comboBox.SelectedIndex = 0;
+            ////MessageBox.Show(comboBox.Text);
+
+            ////MessageBox.Show($"Menu Loaded: baudRate: {serialPortSettings.BaudRate}");
+
+
             var comboBox = sender as ComboBox;
-            comboBox.ItemsSource = data;
-            comboBox.SelectedIndex = 0;*/
-            //serialPortSettings.BaudRate = 9600;
-            //MessageBox.Show($"Selected Baud Rate: {serialPortSettings.BaudRate}");
-            var comboBox = sender as ComboBox;
-            //MessageBox.Show($"{ comboBox}");
-            string baudString = serialPortSettings.BaudRate.ToString();
-            comboBox.ItemsSource = baudString;
-            //MessageBox.Show($"{ comboBox.Text}");
-            //serialPortSettings.BaudRate = Convert.ToInt32(comboBox.Text);
-            //comboBox.ItemStringFormat = serialPortSettings.BaudRate;
-            comboBox.SelectedIndex = Convert.ToInt32(comboBox.FindName(baudString));
+            comboBox.ItemsSource = serialPortSettings.BaudRatesList;
+            MessageBox.Show($"baudrate of serialport: {serialPortSettings.BaudRate}");
+            comboBox.SelectedIndex = 0;
+            serialPortSettings.COMPort = comboBox.Text;
         }
 
         //methods for the data Bits
         private void dataBits_comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            var comboBox = sender as ComboBox;
+            //comboBox.ItemsSource = serialPortSettings.BaudRatesList;
+            //serialPortSettings.BaudRate = Convert.ToInt32(comboBox.SelectedValue);
+            ////comboBox.Text = serialPortSettings.BaudRate.ToString();
+            ////MessageBox.Show($"Menu changed after assignment: baudRate: {serialPortSettings.BaudRate}");
+            serialPortSettings.DataBits = Convert.ToInt32(comboBox.SelectedValue);
+            dataBitsLabel.Content = serialPortSettings.DataBits;
+            comboBox.ItemsSource = serialPortSettings.DataBitsList;
+            //comboBox.SelectedIndex = 3;
         }
         private void dataBits_comboBox_Loaded(object sender, RoutedEventArgs e)
         {
@@ -234,9 +258,11 @@ namespace GCITester
             comboBox.SelectedIndex = 3;*/
             var comboBox = sender as ComboBox;
             //MessageBox.Show($"{ comboBox}");
-            comboBox.ItemsSource = Convert.ToString(serialPortSettings.DataBits);
+            //comboBox.ItemsSource = Convert.ToString(serialPortSettings.DataBits);
+            //comboBox.ItemsSource = "testing";
             //comboBox.ItemStringFormat = serialPortSettings.BaudRate;
-            comboBox.SelectedIndex = 0;
+            comboBox.ItemsSource = serialPortSettings.DataBitsList;
+            comboBox.SelectedIndex = 3;
 
         }
 
@@ -258,22 +284,79 @@ namespace GCITester
         //methods for the stop Bits
         private void stopBits_comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            string stopBitString = serialPortSettings.StopBit.ToString();
+            //MessageBox.Show($"stop Bit String : { stopBitString}");
+            //List<string> data = new List<string>();
+            //data.Add("1");
+            //data.Add("1.5");
+            //data.Add("2");
+            var comboBox = sender as ComboBox;
+            //comboBox.ItemsSource = data;
+            if (comboBox.SelectedValue.Equals(1.5))
+            {
+                stopBitString = "OnePointFive";
+            }
+            else if (comboBox.SelectedValue.Equals(2))
+            {
+                stopBitString = "Two";
+            }
+            else
+            {
+                stopBitString = "One";
+            }
+            //serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits),comboBox.Text);
+            //serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits), comboBox.Text);
+            comboBox.ItemsSource = Convert.ToString(serialPortSettings.StopBit);
+            serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits), stopBitString);
+            //MessageBox.Show($"new serial Stop Bit = {serialPortSettings.StopBit}");
         }
+        
         private void stopBits_comboBox_Loaded(object sender, RoutedEventArgs e)
         {
-            List<string> data = new List<string>();
-            data.Add("1");
-            data.Add("1.5");
-            data.Add("2");
+            string stopBitString = serialPortSettings.StopBit.ToString();
+            MessageBox.Show($"stop Bit String : { stopBitString}");
+            //List<string> data = new List<string>();
+            //data.Add("1");
+            //data.Add("1.5");
+            //data.Add("2");
             var comboBox = sender as ComboBox;
-            comboBox.ItemsSource = data;
-            comboBox.SelectedIndex = 0;
+            comboBox.ItemsSource = Convert.ToString(serialPortSettings.StopBit);
+            MessageBox.Show($"string{serialPortSettings.StopBit.ToString()}");
+            comboBox.ItemsSource = serialPortSettings.StopBit.ToString();
+            if (comboBox.SelectedValue.Equals(1.5))
+            {
+                stopBitString = "OnePointFive";
+            }
+            else if (comboBox.SelectedValue.Equals(2))
+            {
+                stopBitString = "Two";
+            }
+            else
+            {
+                stopBitString = "One";
+            }
+            //serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits),comboBox.Text);
+            //serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits), comboBox.Text);
+            serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits), stopBitString);
+            MessageBox.Show($"new serial Stop Bit = {serialPortSettings.StopBit}");
+
+            //List<string> data = new List<string>();
+            //data.Add("1");
+            //data.Add("1.5");
+            //data.Add("2");
+            //var comboBox = sender as ComboBox;
+            //comboBox.ItemsSource = data;
+            //comboBox.SelectedIndex = 0;
+            //MessageBox.Show($"stop bit before: {serialPortSettings.StopBit}");
+            //MessageBox.Show($"selected value: {comboBox.SelectedValue}");
+            ////serialPortSettings.StopBit = (System.IO.Ports.StopBits)comboBox.SelectedValue;
+            //MessageBox.Show($"stop bit after : {serialPortSettings.StopBit}");
         }
 
         private void save_Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Save Button Clicked");
+            //MessageBox.Show($"Save Button Clicked, e = {}");
+            //serialPortSettings.BaudRate = Convert.ToInt32(comboBox.SelectedValue);
             SaveSettings();
             this.Close();
 
