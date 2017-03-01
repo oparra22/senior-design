@@ -181,6 +181,7 @@ namespace GCITester
             //this.serialPortSettings.TabIndex = 0;
             var comboBox = sender as ComboBox;
             comboBox.ItemsSource = serialPortSettings.ComPortList;
+            comboBox.SelectedIndex = 0;
 
 
         }
