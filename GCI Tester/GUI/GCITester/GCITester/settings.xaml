@@ -26,9 +26,9 @@
                     <Label x:Name="label6_Copy3" Content="Stop Bits" HorizontalAlignment="Left" Margin="49,164,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF15315F"/>
                     <ComboBox x:Name="comPort_comboBox" HorizontalAlignment="Left" Margin="139,49,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comPort_comboBox_SelectionChanged" Loaded ="comPort_comboBox_Loaded"/>
                     <ComboBox x:Name="baudRate_comboBox" HorizontalAlignment="Left" Margin="139,80,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="baudRate_comboBox_SelectionChanged" Loaded ="baudRate_comboBox_Loaded"/>
-                    <ComboBox x:Name="dataBits_comboBox" HorizontalAlignment="Left" Margin="139,111,0,0" VerticalAlignment="Top" Width="120"/>
-                    <ComboBox x:Name="parity_comboBox" HorizontalAlignment="Left" Margin="139,142,0,0" VerticalAlignment="Top" Width="120"/>
-                    <ComboBox x:Name="stopBits_comboBox" HorizontalAlignment="Left" Margin="139,169,0,0" VerticalAlignment="Top" Width="120"/>
+                    <ComboBox x:Name="dataBits_comboBox" HorizontalAlignment="Left" Margin="139,111,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="dataBits_comboBox_SelectionChanged" Loaded ="dataBits_comboBox_Loaded"/>
+                    <ComboBox x:Name="parity_comboBox" HorizontalAlignment="Left" Margin="139,142,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="parity_comboBox_SelectionChanged" Loaded ="parity_comboBox_Loaded"/>
+                    <ComboBox x:Name="stopBits_comboBox" HorizontalAlignment="Left" Margin="139,169,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="stopBits_comboBox_SelectionChanged" Loaded="stopBits_comboBox_Loaded"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="databaseConnectionTab" Header="Database Connection" Margin="-2,-2,-3,-1">

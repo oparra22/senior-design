@@ -77,5 +77,54 @@ namespace GCITester
             comboBox.ItemsSource = data;
             comboBox.SelectedIndex = 0;
         }
+
+        //methods for the data Bits
+        private void dataBits_comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        private void dataBits_comboBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<string> data = new List<string>();
+            data.Add("5");
+            data.Add("6");
+            data.Add("7");
+            data.Add("8");
+            var comboBox = sender as ComboBox;
+            comboBox.ItemsSource = data;
+            comboBox.SelectedIndex = 3;
+
+        }
+
+        //methods for the parity
+        private void parity_comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        private void parity_comboBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<string> data = new List<string>();
+            data.Add("None");
+            var comboBox = sender as ComboBox;
+            comboBox.ItemsSource = data;
+            comboBox.SelectedIndex = 0;
+
+        }
+
+        //methods for the stop Bits
+        private void stopBits_comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        private void stopBits_comboBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<string> data = new List<string>();
+            data.Add("1");
+            data.Add("1.5");
+            data.Add("2");
+            var comboBox = sender as ComboBox;
+            comboBox.ItemsSource = data;
+            comboBox.SelectedIndex = 0;
+        }
     }
 }
