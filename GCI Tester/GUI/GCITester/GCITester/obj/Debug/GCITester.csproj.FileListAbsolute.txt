@@ -19,7 +19,6 @@ C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\
 C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.pdb
 C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\bin\Debug\GCITester.exe
 C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\bin\Debug\GCITester.pdb
-C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.csprojResolveAssemblyReference.cache
 C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\MainWindow.g.cs
 C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\settings.g.cs
 C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\App.g.cs
