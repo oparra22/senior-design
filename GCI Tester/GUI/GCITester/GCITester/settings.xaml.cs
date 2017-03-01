@@ -126,7 +126,7 @@ namespace GCITester
             Properties.Settings.Default.Parity = serialPortSettings.Parity;
             Properties.Settings.Default.StopBits = serialPortSettings.StopBit;
 
-            Properties.Settings.Default.VoltageReference = double.Parse(textVRef.Text);
+            //Properties.Settings.Default.VoltageReference = double.Parse(textVRef.Text);
 
             Properties.Settings.Default.Learn_DefaultIterations = (int)numericLearnIterations.Value;
             Properties.Settings.Default.Learn_DefaultNumberOfParts = (int)numericNumberOfParts.Value;
@@ -181,8 +181,8 @@ namespace GCITester
             //this.serialPortSettings.TabIndex = 0;
             var comboBox = sender as ComboBox;
             comboBox.ItemsSource = serialPortSettings.ComPortList;
+            //MessageBox.Show($"e: {e}");
             comboBox.SelectedIndex = 0;
-
 
         }
 
@@ -206,6 +206,15 @@ namespace GCITester
             comboBox.ItemsSource = data;
             comboBox.SelectedIndex = 0;*/
             //serialPortSettings.BaudRate = 9600;
+            //MessageBox.Show($"Selected Baud Rate: {serialPortSettings.BaudRate}");
+            var comboBox = sender as ComboBox;
+            //MessageBox.Show($"{ comboBox}");
+            string baudString = serialPortSettings.BaudRate.ToString();
+            comboBox.ItemsSource = baudString;
+            //MessageBox.Show($"{ comboBox.Text}");
+            //serialPortSettings.BaudRate = Convert.ToInt32(comboBox.Text);
+            //comboBox.ItemStringFormat = serialPortSettings.BaudRate;
+            comboBox.SelectedIndex = Convert.ToInt32(comboBox.FindName(baudString));
         }
 
         //methods for the data Bits
@@ -223,6 +232,11 @@ namespace GCITester
             var comboBox = sender as ComboBox;
             comboBox.ItemsSource = data;
             comboBox.SelectedIndex = 3;*/
+            var comboBox = sender as ComboBox;
+            //MessageBox.Show($"{ comboBox}");
+            comboBox.ItemsSource = Convert.ToString(serialPortSettings.DataBits);
+            //comboBox.ItemStringFormat = serialPortSettings.BaudRate;
+            comboBox.SelectedIndex = 0;
 
         }
 
@@ -259,6 +273,7 @@ namespace GCITester
 
         private void save_Button_Click(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("Save Button Clicked");
             SaveSettings();
             this.Close();
 

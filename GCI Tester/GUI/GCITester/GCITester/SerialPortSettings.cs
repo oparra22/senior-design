@@ -127,22 +127,51 @@ namespace GCITester
 
         private void comboBaudRate_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                _BaudRate = int.Parse(comboBaudRate.Text);
+            }
+            catch
+            {
+                _BaudRate = 9600;
+            }
         }
 
         private void comboDataBits_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                _DataBits = int.Parse(comboDataBits.Text);
+            }
+            catch
+            {
+                _DataBits = 8;
+            }
         }
 
         private void comboParity_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                _Parity = (Parity)Enum.Parse(typeof(Parity), comboParity.Text);
+            }
+            catch
+            {
+                _Parity = System.IO.Ports.Parity.None;
+            }
         }
 
         private void comboStopBits_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                _StopBit = (StopBits)int.Parse(comboStopBits.Text);
+            }
+            catch
+            {
+                _StopBit = StopBits.One;
+            }
         }
     }
+    
 }

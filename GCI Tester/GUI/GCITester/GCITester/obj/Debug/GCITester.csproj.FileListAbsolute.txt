@@ -45,3 +45,4 @@ C:\Users\Kirsten\Desktop\EA Git\senior-design\GCI Tester\GUI\GCITester\GCITester
 C:\Users\Kirsten\Desktop\EA Git\senior-design\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.g.resources
 C:\Users\Kirsten\Desktop\EA Git\senior-design\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.Properties.Resources.resources
 C:\Users\Kirsten\Desktop\EA Git\senior-design\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.csproj.GenerateResource.Cache
+C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.csprojResolveAssemblyReference.cache
