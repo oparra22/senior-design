@@ -18,37 +18,55 @@
                         <ColumnDefinition Width="92"/>
                     </Grid.ColumnDefinitions>
                     <Rectangle HorizontalAlignment="Left" Height="240" Margin="10,10,0,0" Stroke="#FF15315F" VerticalAlignment="Top" Width="496" OpacityMask="#FF15315F" StrokeThickness="3" Grid.ColumnSpan="2"/>
-                    <Label x:Name="label" Content="Serial Port Settings" HorizontalAlignment="Left" Margin="38,0,0,0" VerticalAlignment="Top" Background="White" Width="118" Foreground="#FF15315F" FontWeight="Bold"/>
+                    <Label x:Name="label" Content="Serial Port Settings" HorizontalAlignment="Left" Margin="38,0,0,0" VerticalAlignment="Top" Background="#FFEFEFEF" Width="118" Foreground="#FF15315F" FontWeight="Bold"/>
+                    <Label x:Name="label6" Content="COM Port" HorizontalAlignment="Left" Margin="49,45,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF15315F"/>
+                    <Label x:Name="label6_Copy" Content="Baud Rate" HorizontalAlignment="Left" Margin="49,76,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF15315F"/>
+                    <Label x:Name="label6_Copy1" Content="Data Bits" HorizontalAlignment="Left" Margin="49,107,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF15315F"/>
+                    <Label x:Name="label6_Copy2" Content="Parity" HorizontalAlignment="Left" Margin="49,138,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF15315F"/>
+                    <Label x:Name="label6_Copy3" Content="Stop Bits" HorizontalAlignment="Left" Margin="49,164,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF15315F"/>
+                    <ComboBox x:Name="comPort_comboBox" HorizontalAlignment="Left" Margin="139,49,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comPort_comboBox_SelectionChanged" Loaded ="comPort_comboBox_Loaded"/>
+                    <ComboBox x:Name="baudRate_comboBox" HorizontalAlignment="Left" Margin="139,80,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="baudRate_comboBox_SelectionChanged" Loaded ="baudRate_comboBox_Loaded"/>
+                    <ComboBox x:Name="dataBits_comboBox" HorizontalAlignment="Left" Margin="139,111,0,0" VerticalAlignment="Top" Width="120"/>
+                    <ComboBox x:Name="parity_comboBox" HorizontalAlignment="Left" Margin="139,142,0,0" VerticalAlignment="Top" Width="120"/>
+                    <ComboBox x:Name="stopBits_comboBox" HorizontalAlignment="Left" Margin="139,169,0,0" VerticalAlignment="Top" Width="120"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="databaseConnectionTab" Header="Database Connection" Margin="-2,-2,-3,-1">
                 <Grid Background="#FFE5E5E5" Opacity="0.5">
                     <Rectangle HorizontalAlignment="Left" Height="240" Margin="10,10,0,0" Stroke="#FF15315F" VerticalAlignment="Top" Width="496" OpacityMask="#FF15315F" StrokeThickness="3"/>
-                    <Label x:Name="label1" Content="Database Connection Settings" HorizontalAlignment="Left" Margin="38,0,0,0" VerticalAlignment="Top" Background="White" Width="181" Foreground="#FF15315F" FontWeight="Bold"/>
+                    <Label x:Name="label1" Content="Database Connection Settings" HorizontalAlignment="Left" Margin="38,0,0,0" VerticalAlignment="Top" Background="#FFEFEFEF" Width="181" Foreground="#FF15315F" FontWeight="Bold"/>
                 </Grid>
             </TabItem>
             <TabItem Header="A/D Settings" Margin="-2,-2,-4,-1">
                 <Grid Background="#FFE5E5E5" Opacity="0.5">
                     <Rectangle HorizontalAlignment="Left" Height="240" Margin="10,10,0,0" Stroke="#FF15315F" VerticalAlignment="Top" Width="496" OpacityMask="#FF15315F" StrokeThickness="3"/>
-                    <Label x:Name="label2" Content="A/D Settings" HorizontalAlignment="Left" Margin="38,0,0,0" VerticalAlignment="Top" Background="White" Width="84" Foreground="#FF15315F" FontWeight="Bold"/>
+                    <Label x:Name="label2" Content="A/D Settings" HorizontalAlignment="Left" Margin="38,0,0,0" VerticalAlignment="Top" Background="#FFEFEFEF" Width="84" Foreground="#FF15315F" FontWeight="Bold"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="learnSettingsTab" Header="Learn Settings" Margin="-2,-2,2,-1">
                 <Grid Background="#FFE5E5E5" Opacity="0.5">
                     <Rectangle HorizontalAlignment="Left" Height="240" Margin="10,10,0,0" Stroke="#FF15315F" VerticalAlignment="Top" Width="496" OpacityMask="#FF15315F" StrokeThickness="3"/>
-                    <Label x:Name="label3" Content="Learn Settings" HorizontalAlignment="Left" Margin="38,0,0,0" VerticalAlignment="Top" Background="White" Width="112" Foreground="#FF15315F" FontWeight="Bold"/>
+                    <Label x:Name="label3" Content="Learn Settings" HorizontalAlignment="Left" Margin="38,0,0,0" VerticalAlignment="Top" Background="#FFEFEFEF" Width="112" Foreground="#FF15315F" FontWeight="Bold"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Production" Margin="-2,-2,-5,-1">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="#FFFCFCFC" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
                 <Grid Background="#FFE5E5E5" Opacity="0.5">
                     <Rectangle HorizontalAlignment="Left" Height="240" Margin="10,10,0,0" Stroke="#FF15315F" VerticalAlignment="Top" Width="496" OpacityMask="#FF15315F" StrokeThickness="3"/>
-                    <Label x:Name="label4" Content="Production Settings" HorizontalAlignment="Left" Margin="38,0,0,0" VerticalAlignment="Top" Background="White" Width="122" Foreground="#FF15315F" FontWeight="Bold"/>
+                    <Label x:Name="label4" Content="Production Settings" HorizontalAlignment="Left" Margin="38,0,0,0" VerticalAlignment="Top" Background="#FFEFEFEF" Width="122" Foreground="#FF15315F" FontWeight="Bold"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="lifetimeTab" Header="Lifetime" Margin="-2,-2,-4,-1">
                 <Grid Background="#FFE5E5E5" Opacity="0.5">
                     <Rectangle HorizontalAlignment="Left" Height="240" Margin="10,10,0,0" Stroke="#FF15315F" VerticalAlignment="Top" Width="496" OpacityMask="#FF15315F" StrokeThickness="3"/>
-                    <Label x:Name="label5" Content="Lifetime Settings" HorizontalAlignment="Left" Margin="38,0,0,0" VerticalAlignment="Top" Background="White" Width="109" Foreground="#FF15315F" FontWeight="Bold"/>
+                    <Label x:Name="label5" Content="Lifetime Settings" HorizontalAlignment="Left" Margin="38,0,0,0" VerticalAlignment="Top" Background="#FFEFEFEF" Width="109" Foreground="#FF15315F" FontWeight="Bold"/>
                 </Grid>
             </TabItem>
         </TabControl>

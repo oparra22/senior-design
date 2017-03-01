@@ -42,5 +42,40 @@ namespace GCITester
             // window.Show();
             //this.Close();
         }
+        //Com Port Label and Box
+        private void comPort_comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        private void comPort_comboBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            //Need to populate the list so lets create a list of items
+            List<string> data = new List<string>();
+            data.Add("COM3");
+            var comboBox = sender as ComboBox;
+            comboBox.ItemsSource = data;
+            comboBox.SelectedIndex = 0;
+        }
+
+        //methods for the Baud rate
+        private void baudRate_comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        private void baudRate_comboBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<string> data = new List<string>();
+            data.Add("9600");
+            data.Add("14400");
+            data.Add("19200");
+            data.Add("28800");
+            data.Add("38400");
+            data.Add("56000");
+            data.Add("57600");
+            data.Add("115200");
+            var comboBox = sender as ComboBox;
+            comboBox.ItemsSource = data;
+            comboBox.SelectedIndex = 0;
+        }
     }
 }
