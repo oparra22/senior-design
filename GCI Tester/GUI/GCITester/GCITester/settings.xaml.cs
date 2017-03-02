@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Xceed.Wpf.Toolkit;
 
 namespace GCITester
 {
@@ -292,7 +293,7 @@ namespace GCITester
             //serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits), comboBox.Text);
             //comboBox.ItemsSource = Convert.ToString(serialPortSettings.StopBit);
             serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits), stopBitString);
-            MessageBox.Show($"new serial Stop Bit = {serialPortSettings.StopBit}");
+            //MessageBox.Show($"new serial Stop Bit = {serialPortSettings.StopBit}");
         }
         
         private void stopBits_comboBox_Loaded(object sender, RoutedEventArgs e)
@@ -302,8 +303,13 @@ namespace GCITester
             var comboBox = sender as ComboBox;
             //MessageBox.Show($"Stop bit List{serialPortSettings.StopBitsList}");
             comboBox.ItemsSource = serialPortSettings.StopBitsList;
-            //comboBox.ItemsSource = serialPortSettings.StopBit.ToString();
-            //if (comboBox.SelectedValue.Equals(1.5))
+            
+            int tempIndex = 0;
+            //MessageBox.Show($"{comboBox.Items[tempIndex]}");
+
+
+            //***********This block causes the program to crash when we switch from one tab back to settings
+            //if(comboBox.SelectedValue.Equals(1.5))
             //{
             //    stopBitString = "OnePointFive";
             //}
@@ -315,25 +321,6 @@ namespace GCITester
             //{
             //    stopBitString = "One";
             //}
-            //serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits),comboBox.Text);
-            //serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits), comboBox.Text);
-            //serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits), stopBitString);
-            //MessageBox.Show($"new serial Stop Bit = {serialPortSettings.StopBit}");
-            int tempIndex = 0;
-            //MessageBox.Show($"{comboBox.Items[tempIndex]}");
-
-            if(comboBox.SelectedValue.Equals(1.5))
-            {
-                stopBitString = "OnePointFive";
-            }
-            else if (comboBox.SelectedValue.Equals(2))
-            {
-                stopBitString = "Two";
-            }
-            else
-            {
-                stopBitString = "One";
-            }
             for (int i = 0; i < comboBox.Items.Count; i++)
             {
                 //MessageBox.Show($"comboBox.Items[tempIndex]:   {comboBox.Items[tempIndex]}");
@@ -371,6 +358,11 @@ namespace GCITester
             //MessageBox.Show("Before loading.");
             LoadSettings();
             //MessageBox.Show("After Loading");
+        }
+
+        private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
     public partial class Settings
