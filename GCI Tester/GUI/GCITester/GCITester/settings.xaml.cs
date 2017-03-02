@@ -169,9 +169,7 @@ namespace GCITester
         private void comPort_comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var comboBox = sender as ComboBox;
-            
             serialPortSettings.COMPort = Convert.ToString(comboBox.SelectedValue);
-            comLabel.Content = serialPortSettings.COMPort;
         }
         private void comPort_comboBox_Loaded(object sender, RoutedEventArgs e)
         {
@@ -179,7 +177,7 @@ namespace GCITester
             
             var comboBox = sender as ComboBox;
             comboBox.ItemsSource = serialPortSettings.ComPortList;
-            MessageBox.Show($"port chosen: {serialPortSettings.COMPort}");
+            //MessageBox.Show($"port chosen: {serialPortSettings.COMPort}");
             comboBox.SelectedIndex = 0;
             serialPortSettings.COMPort = comboBox.Text;
             
@@ -191,7 +189,6 @@ namespace GCITester
         {
             var comboBox = sender as ComboBox;
             serialPortSettings.BaudRate = Convert.ToInt32(comboBox.SelectedValue);
-            baudLabel.Content = serialPortSettings.BaudRate;
         }
         private void baudRate_comboBox_Loaded(object sender, RoutedEventArgs e)
         {
@@ -199,10 +196,10 @@ namespace GCITester
 
             var comboBox = sender as ComboBox;
             comboBox.ItemsSource = serialPortSettings.BaudRatesList;
-            MessageBox.Show($"baudrate of serialport: {serialPortSettings.BaudRate}");
+            //MessageBox.Show($"baudrate of serialport: {serialPortSettings.BaudRate}");
             string temp = Convert.ToString(serialPortSettings.BaudRate);
             int tempIndex = 0;
-            MessageBox.Show($"{comboBox.Items[tempIndex]}");
+            //MessageBox.Show($"{comboBox.Items[tempIndex]}");
 
             for (int i = 0; i < comboBox.Items.Count; i++)
             {
@@ -227,33 +224,33 @@ namespace GCITester
         private void dataBits_comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var comboBox = sender as ComboBox;
-            //comboBox.ItemsSource = serialPortSettings.BaudRatesList;
-            //serialPortSettings.BaudRate = Convert.ToInt32(comboBox.SelectedValue);
-            ////comboBox.Text = serialPortSettings.BaudRate.ToString();
-            ////MessageBox.Show($"Menu changed after assignment: baudRate: {serialPortSettings.BaudRate}");
             serialPortSettings.DataBits = Convert.ToInt32(comboBox.SelectedValue);
-            dataBitsLabel.Content = serialPortSettings.DataBits;
-            comboBox.ItemsSource = serialPortSettings.DataBitsList;
-            //comboBox.SelectedIndex = 3;
         }
         private void dataBits_comboBox_Loaded(object sender, RoutedEventArgs e)
         {
-            /*List<string> data = new List<string>();
-            data.Add("5");
-            data.Add("6");
-            data.Add("7");
-            data.Add("8");
             var comboBox = sender as ComboBox;
-            comboBox.ItemsSource = data;
-            comboBox.SelectedIndex = 3;*/
-            var comboBox = sender as ComboBox;
-            //MessageBox.Show($"{ comboBox}");
-            //comboBox.ItemsSource = Convert.ToString(serialPortSettings.DataBits);
-            //comboBox.ItemsSource = "testing";
-            //comboBox.ItemStringFormat = serialPortSettings.BaudRate;
             comboBox.ItemsSource = serialPortSettings.DataBitsList;
-            comboBox.SelectedIndex = 3;
+            //string temp = Convert.ToString(serialPortSettings.BaudRate);
+            int tempIndex = 0;
+            //MessageBox.Show($"{comboBox.Items[tempIndex]}");
 
+            for (int i = 0; i < comboBox.Items.Count; i++)
+            {
+                //MessageBox.Show($"comboBox.Items[tempIndex]:   {comboBox.Items[tempIndex]}");
+                //MessageBox.Show($"comboBox.Items[tempIndex].gettype():   {comboBox.Items[tempIndex].GetType()}");
+                if (comboBox.Items[tempIndex].Equals(serialPortSettings.DataBits))
+                {
+
+                    //MessageBox.Show("if Entered");
+                    i = comboBox.Items.Count;
+                }
+                else
+                {
+                    //MessageBox.Show($"tempindex Before= {tempIndex}");
+                    tempIndex += 1;
+                }
+            }
+            comboBox.SelectedIndex = tempIndex;
         }
 
         //methods for the parity
