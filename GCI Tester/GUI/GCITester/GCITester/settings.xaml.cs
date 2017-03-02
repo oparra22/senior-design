@@ -35,7 +35,7 @@ namespace GCITester
             this.serialPortSettings = new GCITester.SerialPortSettings();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabSerialConfig = new System.Windows.Forms.TabPage();
-            this.serialPortSettings = new GCITester.SerialPortSettings();
+            //this.serialPortSettings = new GCITester.SerialPortSettings();
             this.tabA2DConfig = new System.Windows.Forms.TabPage();
             this.textVRef = new System.Windows.Forms.TextBox();
             this.labelVref = new System.Windows.Forms.Label();
@@ -88,7 +88,7 @@ namespace GCITester
             this.tabDatabaseConnection.SuspendLayout();
             //this.SuspendLayout();
             // 
-            serialPortSettings.COMPort = "COM3";
+            //serialPortSettings.COMPort = "COM3";
         }
 
         //LoadSettings block taken from the previous program code
@@ -117,13 +117,15 @@ namespace GCITester
             textDBName.Text = Properties.Settings.Default.Database_Name;
             textDBUserName.Text = Properties.Settings.Default.Database_Username;
             textDBPassWord.Text = Properties.Settings.Default.Database_Password;
+
+            //Properties.Settings.Default.Save();
         }
         //Save settings method to save the settings
         private void SaveSettings()
         {
 
             Properties.Settings.Default.ComPort = serialPortSettings.COMPort;
-            MessageBox.Show($"baud before save{serialPortSettings.BaudRate}");
+            //MessageBox.Show($"baud before save{serialPortSettings.BaudRate}");
             Properties.Settings.Default.BaudRate = serialPortSettings.BaudRate;
             Properties.Settings.Default.DataBits = serialPortSettings.DataBits;
             Properties.Settings.Default.Parity = serialPortSettings.Parity;
@@ -161,33 +163,20 @@ namespace GCITester
         //This is the logic to occur when the "Back To Menu" Button is pressed
         private void back_to_menu_button_Click(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show($"back to menu - sender: {sender} \n e: {e}");
-
-            // MainWindow window = new MainWindow();
-            // window.Show();
-            //this.Close();
+            
         }
         //Com Port Label and Box
         private void comPort_comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var comboBox = sender as ComboBox;
-            //comboBox.ItemsSource = serialPortSettings.BaudRatesList;
-            //serialPortSettings.BaudRate = Convert.ToInt32(comboBox.SelectedValue);
-            ////comboBox.Text = serialPortSettings.BaudRate.ToString();
-            ////MessageBox.Show($"Menu changed after assignment: baudRate: {serialPortSettings.BaudRate}");
+            
             serialPortSettings.COMPort = Convert.ToString(comboBox.SelectedValue);
             comLabel.Content = serialPortSettings.COMPort;
         }
         private void comPort_comboBox_Loaded(object sender, RoutedEventArgs e)
         {
             //Need to populate the list so lets create a list of items
-            /* List<string> data = new List<string>();
-             data.Add("COM3");
-             var comboBox = sender as ComboBox;
-             comboBox.ItemsSource = data;
-             comboBox.SelectedIndex = 0;*/
-            //this.serialPortSettings.COMPort = "COM3";
-            //this.serialPortSettings.TabIndex = 0;
+            
             var comboBox = sender as ComboBox;
             comboBox.ItemsSource = serialPortSettings.ComPortList;
             MessageBox.Show($"port chosen: {serialPortSettings.COMPort}");
@@ -201,36 +190,37 @@ namespace GCITester
         private void baudRate_comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var comboBox = sender as ComboBox;
-            //comboBox.ItemsSource = serialPortSettings.BaudRatesList;
-            //serialPortSettings.BaudRate = Convert.ToInt32(comboBox.SelectedValue);
-            ////comboBox.Text = serialPortSettings.BaudRate.ToString();
-            ////MessageBox.Show($"Menu changed after assignment: baudRate: {serialPortSettings.BaudRate}");
             serialPortSettings.BaudRate = Convert.ToInt32(comboBox.SelectedValue);
             baudLabel.Content = serialPortSettings.BaudRate;
         }
         private void baudRate_comboBox_Loaded(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show($"baudrateLoad: {serialPortSettings.BaudRate}");
-            //var comboBox = sender as ComboBox;
-            ////MessageBox.Show($"{ comboBox}");
-            ////string baudString = serialPortSettings.BaudRate.ToString();
-            //comboBox.ItemsSource = serialPortSettings.BaudRatesList;
-            ////MessageBox.Show($"{ comboBox.Text}");
-            ////serialPortSettings.BaudRate = Convert.ToInt32(comboBox.Text);
-            ////comboBox.ItemStringFormat = serialPortSettings.BaudRate;
-            //comboBox.SelectedIndex = Convert.ToInt32(comboBox.FindName($"{serialPortSettings.BaudRate}"));
-            ////MessageBox.Show($"Selected Index: {comboBox.SelectedIndex}");
-            ////comboBox.SelectedIndex = 0;
-            ////MessageBox.Show(comboBox.Text);
-
-            ////MessageBox.Show($"Menu Loaded: baudRate: {serialPortSettings.BaudRate}");
-
+        
 
             var comboBox = sender as ComboBox;
             comboBox.ItemsSource = serialPortSettings.BaudRatesList;
             MessageBox.Show($"baudrate of serialport: {serialPortSettings.BaudRate}");
-            comboBox.SelectedIndex = 0;
-            serialPortSettings.COMPort = comboBox.Text;
+            string temp = Convert.ToString(serialPortSettings.BaudRate);
+            int tempIndex = 0;
+            MessageBox.Show($"{comboBox.Items[tempIndex]}");
+
+            for (int i = 0; i < comboBox.Items.Count; i++)
+            {
+                //MessageBox.Show($"comboBox.Items[tempIndex]:   {comboBox.Items[tempIndex]}");
+                //MessageBox.Show($"comboBox.Items[tempIndex].gettype():   {comboBox.Items[tempIndex].GetType()}");
+                if (comboBox.Items[tempIndex].Equals(serialPortSettings.BaudRate))
+                {
+                    
+                    //MessageBox.Show("if Entered");
+                    i = comboBox.Items.Count;
+                }
+                else
+                {
+                    //MessageBox.Show($"tempindex Before= {tempIndex}");
+                    tempIndex += 1;
+                }
+            }
+            comboBox.SelectedIndex = tempIndex;
         }
 
         //methods for the data Bits
@@ -366,7 +356,9 @@ namespace GCITester
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
+            //MessageBox.Show("Before loading.");
             LoadSettings();
+            //MessageBox.Show("After Loading");
         }
     }
     public partial class Settings

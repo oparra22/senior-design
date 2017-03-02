@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GCITester"
         mc:Ignorable="d"
-        Title="settings" Height="428.835" Width="794.807">
+        Title="settings" Height="428.835" Width="794.807"
+        Loaded="UserControl_Loaded">
     <Grid>
         <Image x:Name="image" HorizontalAlignment="Left" Height="84" Margin="10,10,0,0" VerticalAlignment="Top" Width="277" Source="GCILogo.jpg"/>
         <Button x:Name="backToMenuBtn" Content="Back to Menu" HorizontalAlignment="Left" Margin="10,323,0,0" VerticalAlignment="Top" Width="223" Height="48" Background="#FF15315F" Foreground="White" FontSize="20" FontFamily="Microsoft JhengHei UI" FontWeight="Bold" Click="back_to_menu_button_Click"/>
         <Button x:Name="openPortBtn" Content="Open Port" HorizontalAlignment="Left" Margin="10,255,0,0" VerticalAlignment="Top" Width="223" Height="48" Background="#FF15315F" Foreground="White" FontSize="20" FontFamily="Microsoft JhengHei UI" FontWeight="Bold" Click="open_port_button_Click"/>
         <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="312" Margin="251,77,0,0" VerticalAlignment="Top" Width="526">
-            <TabItem x:Name="serialPortTab" Header="Serial Port Settings" Margin="-2,-2,-2,-1">
+            <TabItem x:Name="serialPortTab" Header="Serial Port Settings" Margin="-2,-2,-2,-1" >
                 <Grid Background="#FFE5E5E5" Opacity="0.5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>

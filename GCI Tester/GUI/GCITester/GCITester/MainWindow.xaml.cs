@@ -20,6 +20,7 @@ namespace GCITester
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace GCITester
 
         private void button_Copy7_Click(object sender, RoutedEventArgs e)
         {
+            //window.Visibility = Visibility.Visible;
             Settings window = new Settings();
             window.Show();
             //this.Close();
