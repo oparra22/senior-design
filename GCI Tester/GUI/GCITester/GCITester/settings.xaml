@@ -29,7 +29,7 @@
                     <ComboBox x:Name="baudRate_comboBox" HorizontalAlignment="Left" Margin="139,80,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="baudRate_comboBox_SelectionChanged" Loaded=" baudRate_comboBox_Loaded"/>
                     <ComboBox x:Name="dataBits_comboBox" HorizontalAlignment="Left" Margin="139,111,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="dataBits_comboBox_SelectionChanged" Loaded ="dataBits_comboBox_Loaded"/>
                     <ComboBox x:Name="parity_comboBox" HorizontalAlignment="Left" Margin="139,142,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="parity_comboBox_SelectionChanged" Loaded ="parity_comboBox_Loaded"/>
-                    <ComboBox x:Name="stopBits_comboBox" HorizontalAlignment="Left" Margin="139,169,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="stopBits_comboBox_SelectionChanged"/>
+                    <ComboBox x:Name="stopBits_comboBox" HorizontalAlignment="Left" Margin="139,169,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="stopBits_comboBox_SelectionChanged" Loaded="stopBits_comboBox_Loaded"/>
                     <Button x:Name="saveClose_Button" Grid.ColumnSpan="2" Content="Save and Close" HorizontalAlignment="Left" Margin="397,216,0,0" VerticalAlignment="Top" Width="88" Click="save_Button_Click"/>
                 </Grid>
             </TabItem>

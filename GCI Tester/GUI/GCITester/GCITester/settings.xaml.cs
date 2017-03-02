@@ -272,13 +272,10 @@ namespace GCITester
         private void stopBits_comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string stopBitString = serialPortSettings.StopBit.ToString();
-            //MessageBox.Show($"stop Bit String : { stopBitString}");
-            //List<string> data = new List<string>();
-            //data.Add("1");
-            //data.Add("1.5");
-            //data.Add("2");
+           
             var comboBox = sender as ComboBox;
-            //comboBox.ItemsSource = data;
+            //comboBox.ItemsSource = Convert.ToString(serialPortSettings.StopBitsList);
+            comboBox.ItemsSource = serialPortSettings.StopBitsList;
             if (comboBox.SelectedValue.Equals(1.5))
             {
                 stopBitString = "OnePointFive";
@@ -293,24 +290,39 @@ namespace GCITester
             }
             //serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits),comboBox.Text);
             //serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits), comboBox.Text);
-            comboBox.ItemsSource = Convert.ToString(serialPortSettings.StopBit);
+            //comboBox.ItemsSource = Convert.ToString(serialPortSettings.StopBit);
             serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits), stopBitString);
-            //MessageBox.Show($"new serial Stop Bit = {serialPortSettings.StopBit}");
+            MessageBox.Show($"new serial Stop Bit = {serialPortSettings.StopBit}");
         }
         
         private void stopBits_comboBox_Loaded(object sender, RoutedEventArgs e)
         {
             string stopBitString = serialPortSettings.StopBit.ToString();
-            MessageBox.Show($"stop Bit String : { stopBitString}");
-            //List<string> data = new List<string>();
-            //data.Add("1");
-            //data.Add("1.5");
-            //data.Add("2");
+        
             var comboBox = sender as ComboBox;
-            comboBox.ItemsSource = Convert.ToString(serialPortSettings.StopBit);
-            MessageBox.Show($"string{serialPortSettings.StopBit.ToString()}");
-            comboBox.ItemsSource = serialPortSettings.StopBit.ToString();
-            if (comboBox.SelectedValue.Equals(1.5))
+            //MessageBox.Show($"Stop bit List{serialPortSettings.StopBitsList}");
+            comboBox.ItemsSource = serialPortSettings.StopBitsList;
+            //comboBox.ItemsSource = serialPortSettings.StopBit.ToString();
+            //if (comboBox.SelectedValue.Equals(1.5))
+            //{
+            //    stopBitString = "OnePointFive";
+            //}
+            //else if (comboBox.SelectedValue.Equals(2))
+            //{
+            //    stopBitString = "Two";
+            //}
+            //else
+            //{
+            //    stopBitString = "One";
+            //}
+            //serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits),comboBox.Text);
+            //serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits), comboBox.Text);
+            //serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits), stopBitString);
+            //MessageBox.Show($"new serial Stop Bit = {serialPortSettings.StopBit}");
+            int tempIndex = 0;
+            //MessageBox.Show($"{comboBox.Items[tempIndex]}");
+
+            if(comboBox.SelectedValue.Equals(1.5))
             {
                 stopBitString = "OnePointFive";
             }
@@ -322,22 +334,25 @@ namespace GCITester
             {
                 stopBitString = "One";
             }
-            //serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits),comboBox.Text);
-            //serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits), comboBox.Text);
-            serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits), stopBitString);
-            MessageBox.Show($"new serial Stop Bit = {serialPortSettings.StopBit}");
+            for (int i = 0; i < comboBox.Items.Count; i++)
+            {
+                //MessageBox.Show($"comboBox.Items[tempIndex]:   {comboBox.Items[tempIndex]}");
+                //MessageBox.Show($"comboBox.Items[tempIndex].gettype():   {comboBox.Items[tempIndex].GetType()}");
+                if (comboBox.Items[tempIndex].Equals(serialPortSettings.StopBit.ToString()))
+                {
 
-            //List<string> data = new List<string>();
-            //data.Add("1");
-            //data.Add("1.5");
-            //data.Add("2");
-            //var comboBox = sender as ComboBox;
-            //comboBox.ItemsSource = data;
-            //comboBox.SelectedIndex = 0;
-            //MessageBox.Show($"stop bit before: {serialPortSettings.StopBit}");
-            //MessageBox.Show($"selected value: {comboBox.SelectedValue}");
-            ////serialPortSettings.StopBit = (System.IO.Ports.StopBits)comboBox.SelectedValue;
-            //MessageBox.Show($"stop bit after : {serialPortSettings.StopBit}");
+                    //MessageBox.Show("if Entered");
+                    i = comboBox.Items.Count;
+                }
+                else
+                {
+                    //MessageBox.Show($"tempindex Before= {tempIndex}");
+                    tempIndex += 1;
+                }
+            }
+            comboBox.SelectedIndex = tempIndex;
+
+
         }
 
         private void save_Button_Click(object sender, RoutedEventArgs e)

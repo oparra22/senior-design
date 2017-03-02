@@ -54,11 +54,22 @@ namespace GCITester
         {
             get
             {
-                int[] baudRates = { 5,6,7,8 };
+                int[] dataBits = { 5,6,7,8 };
 
-                return baudRates;
+                return dataBits;
             }
         }
+
+        public double[] StopBitsList
+        {
+            get
+            {
+                double[] stopBits = { 1,1.5,2};
+
+                return stopBits;
+            }
+        }
+
 
 
         public int BaudRate
