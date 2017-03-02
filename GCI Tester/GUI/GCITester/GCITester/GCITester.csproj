@@ -58,6 +58,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Communication.cs" />
+    <Compile Include="ManualPinTest.xaml.cs">
+      <DependentUpon>ManualPinTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SerialPortSettings.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -79,6 +82,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ManualPinTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -198,6 +198,21 @@ namespace GCITester
             }
         }
 
+        //Function for testing a pin, used in manually test a pin screen
+        public static void TestPin(Byte PinID)
+        {
+            if(!(comPort.IsOpen == true))
+            {
+                OpenPort();
+            }
+
+            Byte[] Data = new Byte[2];
+            Data[0] = (Byte)'T';
+            Data[1] = PinID;
+
+            comPort.Write(Data, 0, 2);
+        }
+
 
 
     }

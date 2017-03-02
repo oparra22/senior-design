@@ -34,5 +34,11 @@ namespace GCITester
             window.Show();
             //this.Close();
         }
+
+        private void button_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            ManualPinTest window = new ManualPinTest();
+            window.Show();
+        }
     }
 }

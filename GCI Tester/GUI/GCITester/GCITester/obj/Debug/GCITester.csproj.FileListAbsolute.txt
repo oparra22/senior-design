@@ -14,3 +14,5 @@ C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\
 C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.csproj.GenerateResource.Cache
 C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.exe
 C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.pdb
+C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\ManualPinTest.g.cs
+C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\ManualPinTest.baml
