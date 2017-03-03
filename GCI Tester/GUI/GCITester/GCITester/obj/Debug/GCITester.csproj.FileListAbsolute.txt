@@ -37,3 +37,5 @@ C:\Users\Kirsten\Desktop\EA Git\senior-design\GCI Tester\GUI\GCITester\GCITester
 C:\Users\Kirsten\Desktop\EA Git\senior-design\GCI Tester\GUI\GCITester\GCITester\obj\Debug\ProductionSettings.g.cs
 C:\Users\Kirsten\Desktop\EA Git\senior-design\GCI Tester\GUI\GCITester\GCITester\bin\Debug\Xceed.Wpf.Toolkit.dll
 C:\Users\Kirsten\Desktop\EA Git\senior-design\GCI Tester\GUI\GCITester\GCITester\obj\Debug\ProductionSettings.baml
+C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\ProductionSettings.g.cs
+C:\Users\Kommon\Documents\GitHub\Engineered_Aggression\GCI Tester\GUI\GCITester\GCITester\obj\Debug\ProductionSettings.baml

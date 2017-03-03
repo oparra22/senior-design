@@ -49,8 +49,8 @@ namespace GCITester
                 //If Portname is still empty just like it is when it is initialized
                 if(PortName.Length == 0)
                 {
-                    PortName = "COM3";//Just for Prototyping
-                    //PortName = Properties.Settings.Default.ComPort;//ComPort is grabbed from the automatically generated code so need to figure out how to get this to work. AKA Set up settings
+                    //PortName = "COM1";//Just for Prototyping
+                    PortName = Properties.Settings.Default.ComPort;//ComPort is grabbed from the automatically generated code so need to figure out how to get this to work. AKA Set up settings
                 }
                 if(comPort.IsOpen == true)
                 {

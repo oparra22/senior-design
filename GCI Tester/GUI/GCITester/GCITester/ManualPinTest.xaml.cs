@@ -49,28 +49,34 @@ namespace GCITester
             Byte TestedPin = Communication.PinID;
             Double Voltage = Math.Round((Communication.PinValue * VoltageRef) / 1023.0, 3);
 
+            AddLog("Testing");
             //AddLog("Pin " + TestedPin.ToString() + " Measured: " + Voltage.ToString() + "V  [0x" + Communication.PinValue.ToString("X4") + "]");
         }
 
         private void openPortBtn_Click(object sender, RoutedEventArgs e)
         {
+            //Calls the Open Port method in the Communicatin.cs file which opens the port that is chosen. (This works correctly)
             Communication.OpenPort();
+            manualTestPinResults.Items.Add("Port Opened");
             MessageBox.Show("Open Port Method has finished Running! You may now test a pin!");
+            
         }
 
 
-        //private void AddLog(String Text)
-        //{
-        //    this.Invoke(new MethodInvoker(delegate
-        //    {
-        //        listLog.Items.Add(Text);
-        //    }));
-        //}
+        private void AddLog(String Text)
+        {
+            //This block was given from GCI Old code
+            //this.Invoke(new MethodInvoker(delegate
+            //{
+            //    listLog.Items.Add(Text);
+            //}));
+            manualTestPinResults.Items.Add(Text);
+        }
 
-        //private void frmManualTest_Load(object sender, EventArgs e)
-        //{
-        //    Communication.OnResultComplete += new Communication.ResultComplete(Communication_OnResultComplete);
-        //}
+        private void frmManualTest_Load(object sender, EventArgs e)
+        {
+            Communication.OnResultComplete += new Communication.ResultComplete(Communication_OnResultComplete);
+        }
 
         //private void frmManualTest_FormClosing(object sender, FormClosingEventArgs e)
         //{
