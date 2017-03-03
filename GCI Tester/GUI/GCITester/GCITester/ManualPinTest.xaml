@@ -11,6 +11,7 @@
         <Label x:Name="pinToTestLab" Content="Pin To Test" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="pinNumberTextBox" HorizontalAlignment="Left" Height="23" Margin="83,27,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="40" TextChanged="textBox_TextChanged"/>
         <Button x:Name="testPinButton" Content="Test Pin" HorizontalAlignment="Left" Margin="148,27,-44,0" VerticalAlignment="Top" Width="75" Click="testPinButton_Click"/>
+        <Button x:Name="openPortBtn" Content="Open Port" HorizontalAlignment="Left" Margin="253,29,-149,0" VerticalAlignment="Top" Width="75" Click="openPortBtn_Click"/>
 
     </Grid>
 </Window>

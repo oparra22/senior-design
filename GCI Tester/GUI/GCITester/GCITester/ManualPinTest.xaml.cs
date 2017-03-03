@@ -52,6 +52,12 @@ namespace GCITester
             //AddLog("Pin " + TestedPin.ToString() + " Measured: " + Voltage.ToString() + "V  [0x" + Communication.PinValue.ToString("X4") + "]");
         }
 
+        private void openPortBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Communication.OpenPort();
+            MessageBox.Show("Open Port Method has finished Running! You may now test a pin!");
+        }
+
 
         //private void AddLog(String Text)
         //{
