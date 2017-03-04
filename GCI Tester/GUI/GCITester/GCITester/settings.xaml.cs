@@ -38,7 +38,7 @@ namespace GCITester
             this.tabSerialConfig = new System.Windows.Forms.TabPage();
             //this.serialPortSettings = new GCITester.SerialPortSettings();
             this.tabA2DConfig = new System.Windows.Forms.TabPage();
-            this.textVRef = new System.Windows.Forms.TextBox();
+            this.textVRef = new System.Windows.Controls.TextBox();
             this.labelVref = new System.Windows.Forms.Label();
             this.tabLearn = new System.Windows.Forms.TabPage();
             this.numericSigmaForFlyers = new System.Windows.Forms.NumericUpDown();
@@ -131,9 +131,11 @@ namespace GCITester
             Properties.Settings.Default.DataBits = serialPortSettings.DataBits;
             Properties.Settings.Default.Parity = serialPortSettings.Parity;
             Properties.Settings.Default.StopBits = serialPortSettings.StopBit;
-
-            //Properties.Settings.Default.VoltageReference = double.Parse(textVRef.Text);
-
+            //MessageBox.Show($"VREF Before Save{Properties.Settings.Default.VoltageReference}");
+            //This gives the correct settings for saving and loading the voltage but need to figure out what is really going on
+            //Properties.Settings.Default.VoltageReference = Convert.ToInt32(textVRef.Text);
+            Properties.Settings.Default.VoltageReference = double.Parse(Properties.Settings.Default.VoltageReference.ToString());
+            
             Properties.Settings.Default.Learn_DefaultIterations = (int)numericLearnIterations.Value;
             Properties.Settings.Default.Learn_DefaultNumberOfParts = (int)numericNumberOfParts.Value;
             Properties.Settings.Default.ProductionLimit_DefaultSigma = (int)numericSigmaRange.Value;
@@ -364,6 +366,20 @@ namespace GCITester
         {
 
         }
+
+        private void textVRef_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var textBox = sender as TextBox;
+            MessageBox.Show($"voltage Reference : {textBox.Text}");
+            Properties.Settings.Default.VoltageReference = Convert.ToInt32(textBox.Text);
+
+
+        }
+        private void textVRef_Loaded(object sender, RoutedEventArgs e)
+        {
+            var textBox = sender as TextBox;
+            textBox.Text = Properties.Settings.Default.VoltageReference.ToString();
+        }
     }
     public partial class Settings
     {
@@ -372,7 +388,7 @@ namespace GCITester
         private System.Windows.Forms.TabPage tabA2DConfig;
         private SerialPortSettings serialPortSettings;
         private System.Windows.Forms.Label labelVref;
-        private System.Windows.Forms.TextBox textVRef;
+        //private System.Windows.Forms.TextBox textVRef;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonCancel;

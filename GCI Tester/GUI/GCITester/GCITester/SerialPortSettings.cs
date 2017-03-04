@@ -18,6 +18,7 @@ namespace GCITester
         int _DataBits = 8;
         StopBits _StopBit = StopBits.One;
         Parity _Parity = Parity.None;
+        
 
         public String[] ComPortList
         {
@@ -193,6 +194,18 @@ namespace GCITester
         }
 
         private void comboStopBits_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                _StopBit = (StopBits)int.Parse(comboStopBits.Text);
+            }
+            catch
+            {
+                _StopBit = StopBits.One;
+            }
+        }
+
+        private void voltageRef_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
