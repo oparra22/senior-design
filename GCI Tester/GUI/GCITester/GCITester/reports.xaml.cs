@@ -27,8 +27,9 @@ namespace GCITester
 
         private void productionReport_Click(object sender, RoutedEventArgs e)
         {
-          //  portFlag = 1;
-            MainWindow window = new MainWindow();
+            //  portFlag = 1;
+            //MainWindow window = new MainWindow();
+            productionReport window = new productionReport();
             window.Show();
             this.Close();
         }
