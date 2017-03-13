@@ -19,27 +19,35 @@ namespace GCITester
     /// <summary>
     /// Interaction logic for productionReport.xaml
     /// </summary>
+    /// 
     public partial class productionReport : Window
     {
+        //list Production reports in a given directory
         public productionReport()
         {
             InitializeComponent();
-            //var myListBox = new ListBox();
-             DirectoryInfo dinfo = new DirectoryInfo(@"C:\Users\Seth Pearce\Desktop\TestDirectory");
+            DirectoryInfo dinfo = new DirectoryInfo(@"C:\Users\Seth Pearce\Desktop\TestDirectory");
             FileInfo[] Files = dinfo.GetFiles();
            
             foreach (FileInfo file in Files)
             {
                 listBox.Items.Add(file);
             }
-
-          
         }
-        private void listBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string file = listBox.SelectedItem.ToString();
-            string fullFileName = System.IO.Path.Combine(@"C:\Users\Seth Pearce\Desktop\TestDirectory", file);
-            Process.Start(fullFileName);
+     
+        //button press to open the report selected
+        private void reportButton_Click_1(object sender, RoutedEventArgs e)
+        { 
+            if(listBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please Select a file!");
+            }
+            else
+            {
+                string file = listBox.SelectedItem.ToString();
+                string fullFileName = System.IO.Path.Combine(@"C:\Users\Seth Pearce\Desktop\TestDirectory", file);
+                Process.Start(fullFileName);
+            }
         }
     }
 }
