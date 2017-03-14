@@ -49,5 +49,16 @@ namespace GCITester
                 Process.Start(fullFileName);
             }
         }
+
+        //grab values from text boxes to query DB for legacy data report
+        private void legacyButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Works");
+
+        }
+
+
+        
+
     }
 }
