@@ -50,24 +50,25 @@ namespace GCITester
             this.numericLearnIterations = new System.Windows.Forms.NumericUpDown();
             //this.baudLabel = new System.Windows.Forms.Label();
             this.tabProduction = new System.Windows.Forms.TabPage();
-            this.numericProductionIterations = new System.Windows.Forms.NumericUpDown();
+            //this.numericProductionIterations = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.tabLifetime = new System.Windows.Forms.TabPage();
-            this.numericLifetimeTemperature = new System.Windows.Forms.NumericUpDown();
+            //this.numericLifetimeTemperature = new System.Windows.Forms.NumericUpDown();
             //this.label5 = new System.Windows.Forms.Label();
-            this.numericLifetimeIterations = new System.Windows.Forms.NumericUpDown();
+            //this.numericLifetimeIterations = new System.Windows.Forms.NumericUpDown();
             //this.label6 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.tabDatabaseConnection = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
-            this.textDBHost = new System.Windows.Forms.TextBox();
-            this.textDBName = new System.Windows.Forms.TextBox();
+            //this.textDBHost = new System.Windows.Forms.TextBox();
+            //this.textDBName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textDBUserName = new System.Windows.Forms.TextBox();
+            //this.textDBUserName = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textDBPassWord = new System.Windows.Forms.TextBox();
+            //this.textDBPassWord = new System.Windows.Forms.TextBox();
+
             this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabSerialConfig.SuspendLayout();
@@ -109,15 +110,15 @@ namespace GCITester
 
             numericSigmaForFlyers.Value = Properties.Settings.Default.Learn_SigmaRangeForFlyers;
 
-            numericProductionIterations.Value = Properties.Settings.Default.Production_DefaultIterations;
+            numericProductionIterations.Text = Convert.ToString(Properties.Settings.Default.Production_DefaultIterations);
 
-            numericLifetimeIterations.Value = Properties.Settings.Default.Lifetime_DefaultIterations;
-            numericLifetimeTemperature.Value = (decimal)Properties.Settings.Default.Lifetime_DefaultTemperature;
+            numericLifetimeIterations.Text = Convert.ToString(Properties.Settings.Default.Lifetime_DefaultIterations);
+            numericLifetimeTemperature.Text = Convert.ToString((decimal)Properties.Settings.Default.Lifetime_DefaultTemperature);
 
             textDBHost.Text = Properties.Settings.Default.Database_Server;
             textDBName.Text = Properties.Settings.Default.Database_Name;
             textDBUserName.Text = Properties.Settings.Default.Database_Username;
-            textDBPassWord.Text = Properties.Settings.Default.Database_Password;
+            textDBPassWord.Password = Properties.Settings.Default.Database_Password;
 
             //Properties.Settings.Default.Save();
         }
@@ -141,16 +142,16 @@ namespace GCITester
             Properties.Settings.Default.ProductionLimit_DefaultSigma = (int)numericSigmaRange.Value;
 
             Properties.Settings.Default.Learn_SigmaRangeForFlyers = (int)numericSigmaForFlyers.Value;
-
-            Properties.Settings.Default.Production_DefaultIterations = (int)numericProductionIterations.Value;
-
-            Properties.Settings.Default.Lifetime_DefaultIterations = (int)numericLifetimeIterations.Value;
-            Properties.Settings.Default.Lifetime_DefaultTemperature = (double)numericLifetimeTemperature.Value;
-
+            //Completed Correctly
+            Properties.Settings.Default.Production_DefaultIterations = Convert.ToInt32(numericProductionIterations.Text);
+            //Lifetime Items saved Properly
+            Properties.Settings.Default.Lifetime_DefaultIterations = Convert.ToInt32(numericLifetimeIterations.Text);
+            Properties.Settings.Default.Lifetime_DefaultTemperature = Convert.ToDouble(numericLifetimeTemperature.Text);
+            //Databse Items Saved Properly
             Properties.Settings.Default.Database_Server = textDBHost.Text;
             Properties.Settings.Default.Database_Name = textDBName.Text;
             Properties.Settings.Default.Database_Username = textDBUserName.Text;
-            Properties.Settings.Default.Database_Password = textDBPassWord.Text;
+            Properties.Settings.Default.Database_Password = textDBPassWord.Password;
 
             Properties.Settings.Default.Save();
         }
@@ -419,20 +420,20 @@ namespace GCITester
         private System.Windows.Forms.TabPage tabLifetime;
         private System.Windows.Forms.NumericUpDown numericSigmaForFlyers;
         //private System.Windows.Forms.Label dataBitsLabel;
-        private System.Windows.Forms.NumericUpDown numericLifetimeTemperature;
+        //private System.Windows.Forms.NumericUpDown numericLifetimeTemperature;
         //private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown numericLifetimeIterations;
+        //private System.Windows.Forms.NumericUpDown numericLifetimeIterations;
         //private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown numericProductionIterations;
+        //private System.Windows.Forms.NumericUpDown numericProductionIterations;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabPage tabDatabaseConnection;
-        private System.Windows.Forms.TextBox textDBName;
+        //private System.Windows.Forms.TextBox textDBName;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textDBHost;
+        //private System.Windows.Forms.TextBox textDBHost;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textDBUserName;
+        //private System.Windows.Forms.TextBox textDBUserName;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textDBPassWord;
+        //private System.Windows.Forms.TextBox textDBPassWord;
         private System.Windows.Forms.Label label11;
         
 
