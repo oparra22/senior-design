@@ -42,13 +42,13 @@ namespace GCITester
             this.labelVref = new System.Windows.Forms.Label();
             this.tabLearn = new System.Windows.Forms.TabPage();
             this.numericSigmaForFlyers = new System.Windows.Forms.NumericUpDown();
-            //this.label4 = new System.Windows.Forms.Label();
+            //this.dataBitsLabel = new System.Windows.Forms.Label();
             this.numericSigmaRange = new System.Windows.Forms.NumericUpDown();
-            //this.label3 = new System.Windows.Forms.Label();
+            //this.parityLabel = new System.Windows.Forms.Label();
             this.numericNumberOfParts = new System.Windows.Forms.NumericUpDown();
-            //this.label2 = new System.Windows.Forms.Label();
+            //this.stopBitsLabel = new System.Windows.Forms.Label();
             this.numericLearnIterations = new System.Windows.Forms.NumericUpDown();
-            //this.label1 = new System.Windows.Forms.Label();
+            //this.baudLabel = new System.Windows.Forms.Label();
             this.tabProduction = new System.Windows.Forms.TabPage();
             this.numericProductionIterations = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
@@ -178,12 +178,37 @@ namespace GCITester
         {
             //Need to populate the list so lets create a list of items
             
+            //var comboBox = sender as ComboBox;
+            //comboBox.ItemsSource = serialPortSettings.ComPortList;
+            ////MessageBox.Show($"port chosen: {serialPortSettings.COMPort}");
+            //comboBox.SelectedIndex = ;
+            //serialPortSettings.COMPort = comboBox.Text;
+
             var comboBox = sender as ComboBox;
             comboBox.ItemsSource = serialPortSettings.ComPortList;
-            //MessageBox.Show($"port chosen: {serialPortSettings.COMPort}");
-            comboBox.SelectedIndex = 0;
-            serialPortSettings.COMPort = comboBox.Text;
-            
+            //MessageBox.Show($"baudrate of serialport: {serialPortSettings.BaudRate}");
+            //string temp = Convert.ToString(serialPortSettings.BaudRate);
+            int tempIndex = 0;
+            //MessageBox.Show($"{comboBox.Items[tempIndex]}");
+
+            for (int i = 0; i < comboBox.Items.Count; i++)
+            {
+                //MessageBox.Show($"comboBox.Items[tempIndex]:   {comboBox.Items[tempIndex]}");
+                //MessageBox.Show($"comboBox.Items[tempIndex].gettype():   {comboBox.Items[tempIndex].GetType()}");
+                if (comboBox.Items[tempIndex].Equals(serialPortSettings.COMPort))
+                {
+
+                    //MessageBox.Show("if Entered");
+                    i = comboBox.Items.Count;
+                }
+                else
+                {
+                    //MessageBox.Show($"tempindex Before= {tempIndex}");
+                    tempIndex += 1;
+                }
+            }
+            comboBox.SelectedIndex = tempIndex;
+
 
         }
 
@@ -254,6 +279,7 @@ namespace GCITester
                 }
             }
             comboBox.SelectedIndex = tempIndex;
+            
         }
 
         //methods for the parity
@@ -268,79 +294,69 @@ namespace GCITester
             var comboBox = sender as ComboBox;
             comboBox.ItemsSource = data;
             comboBox.SelectedIndex = 0;
-
+            
         }
 
         //methods for the stop Bits
         private void stopBits_comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string stopBitString = serialPortSettings.StopBit.ToString();
-           
             var comboBox = sender as ComboBox;
-            //comboBox.ItemsSource = Convert.ToString(serialPortSettings.StopBitsList);
-            comboBox.ItemsSource = serialPortSettings.StopBitsList;
-            if (comboBox.SelectedValue.Equals(1.5))
+            string stopBitString = comboBox.SelectedValue.ToString();
+            MessageBox.Show($"{Convert.ToInt32(comboBox.SelectedValue)}");
+            if (Convert.ToInt32(comboBox.SelectedValue) == 1.5)
             {
                 stopBitString = "OnePointFive";
+                //comboBox.SelectedIndex = 1;
             }
-            else if (comboBox.SelectedValue.Equals(2))
+            else if (Convert.ToInt32(comboBox.SelectedValue) == 2)
             {
                 stopBitString = "Two";
+                //comboBox.SelectedIndex = 2;
             }
             else
             {
                 stopBitString = "One";
+                //comboBox.SelectedIndex = 0;
             }
-            //serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits),comboBox.Text);
-            //serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits), comboBox.Text);
-            //comboBox.ItemsSource = Convert.ToString(serialPortSettings.StopBit);
-            serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits), stopBitString);
+
+
+                serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits), stopBitString);
             //MessageBox.Show($"new serial Stop Bit = {serialPortSettings.StopBit}");
         }
         
         private void stopBits_comboBox_Loaded(object sender, RoutedEventArgs e)
         {
-            string stopBitString = serialPortSettings.StopBit.ToString();
-        
             var comboBox = sender as ComboBox;
-            //MessageBox.Show($"Stop bit List{serialPortSettings.StopBitsList}");
-            comboBox.ItemsSource = serialPortSettings.StopBitsList;
             
-            int tempIndex = 0;
-            //MessageBox.Show($"{comboBox.Items[tempIndex]}");
+            //MessageBox.Show($"Default: {serialPortSettings.StopBit}");
+            string stopBitString = serialPortSettings.StopBit.ToString();
 
-
-            //***********This block causes the program to crash when we switch from one tab back to settings
-            //if(comboBox.SelectedValue.Equals(1.5))
-            //{
-            //    stopBitString = "OnePointFive";
-            //}
-            //else if (comboBox.SelectedValue.Equals(2))
-            //{
-            //    stopBitString = "Two";
-            //}
-            //else
-            //{
-            //    stopBitString = "One";
-            //}
-            for (int i = 0; i < comboBox.Items.Count; i++)
+           
+            //comboBox.ItemsSource = Convert.ToString(serialPortSettings.StopBitsList);
+            comboBox.ItemsSource = serialPortSettings.StopBitsList;
+            //comboBox.SelectedValue
+            //MessageBox.Show($"{}");
+            if (serialPortSettings.StopBit.ToString() == "OnePointFive")
             {
-                //MessageBox.Show($"comboBox.Items[tempIndex]:   {comboBox.Items[tempIndex]}");
-                //MessageBox.Show($"comboBox.Items[tempIndex].gettype():   {comboBox.Items[tempIndex].GetType()}");
-                if (comboBox.Items[tempIndex].Equals(serialPortSettings.StopBit.ToString()))
-                {
-
-                    //MessageBox.Show("if Entered");
-                    i = comboBox.Items.Count;
-                }
-                else
-                {
-                    //MessageBox.Show($"tempindex Before= {tempIndex}");
-                    tempIndex += 1;
-                }
+                stopBitString = "OnePointFive";
+                comboBox.SelectedIndex = 1;
             }
-            comboBox.SelectedIndex = tempIndex;
+            else if (serialPortSettings.StopBit.ToString() == "Two")
+            {
+                stopBitString = "Two";
+                comboBox.SelectedIndex = 2;
+            }
+            else
+            {
+                stopBitString = "One";
+                comboBox.SelectedIndex = 0;
+            }
+            //serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits),comboBox.Text);
+            //serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits), comboBox.Text);
+            //comboBox.ItemsSource = Convert.ToString(serialPortSettings.StopBit);
 
+            //serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits), stopBitString);
+            MessageBox.Show($"Stop bits after loard {serialPortSettings.StopBit}");
 
         }
 
@@ -370,7 +386,7 @@ namespace GCITester
         private void textVRef_TextChanged(object sender, TextChangedEventArgs e)
         {
             var textBox = sender as TextBox;
-            MessageBox.Show($"voltage Reference : {textBox.Text}");
+            //MessageBox.Show($"voltage Reference : {textBox.Text}");
             Properties.Settings.Default.VoltageReference = Convert.ToInt32(textBox.Text);
 
 
@@ -394,15 +410,15 @@ namespace GCITester
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.TabPage tabLearn;
         private System.Windows.Forms.NumericUpDown numericNumberOfParts;
-        //private System.Windows.Forms.Label label2;
+        //private System.Windows.Forms.Label stopBitsLabel;
         private System.Windows.Forms.NumericUpDown numericLearnIterations;
-        //private System.Windows.Forms.Label label1;
+        //private System.Windows.Forms.Label baudLabel;
         private System.Windows.Forms.TabPage tabProduction;
         private System.Windows.Forms.NumericUpDown numericSigmaRange;
-        //private System.Windows.Forms.Label label3;
+        //private System.Windows.Forms.Label parityLabel;
         private System.Windows.Forms.TabPage tabLifetime;
         private System.Windows.Forms.NumericUpDown numericSigmaForFlyers;
-        //private System.Windows.Forms.Label label4;
+        //private System.Windows.Forms.Label dataBitsLabel;
         private System.Windows.Forms.NumericUpDown numericLifetimeTemperature;
         //private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown numericLifetimeIterations;

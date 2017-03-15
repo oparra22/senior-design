@@ -40,5 +40,9 @@ namespace GCITester
             ManualPinTest window = new ManualPinTest();
             window.Show();
         }
+        private void label_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

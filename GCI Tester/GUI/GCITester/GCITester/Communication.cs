@@ -68,6 +68,12 @@ namespace GCITester
                 comPort.Handshake = Handshake.None;
                 comPort.ReadTimeout = 1000;
                 comPort.WriteTimeout = 1000;
+                MessageBox.Show($"baud rate{comPort.BaudRate}");
+                MessageBox.Show($"Data bits{comPort.DataBits}");
+                MessageBox.Show($"Stop Bits{comPort.StopBits}");
+                MessageBox.Show($"Parity{comPort.Parity}");
+                MessageBox.Show($"portName{comPort.PortName}");
+                
                 //comPort.ReceivedBytesThreshold = 10;
 
                 //This block was also copied, need to double check what it does
@@ -78,15 +84,19 @@ namespace GCITester
                     comPort.ErrorReceived += new SerialErrorReceivedEventHandler(ErrorHandler);
                 }
 
-
+                //MessageBox.Show("Before port Open");
+                //MessageBox.Show($"Port Before open: {comPort.PortName}");
                 comPort.Open();
+                //MessageBox.Show("After Port Opened");
                 comPort.DtrEnable = true;
                 comPort.RtsEnable = true;
+                MessageBox.Show($"comPort.IsOpen() {comPort.IsOpen}");
                 ClearBuffers();
                 return true;//If try block completes then it was opened successfully, return true
             }//End Try Block
             catch
             {
+                MessageBox.Show("catch method ran");
                 //AddOutput(ex.Message) //Commented out of previous code. debugging purposes. Test!
                 return false;
             }//End catch
