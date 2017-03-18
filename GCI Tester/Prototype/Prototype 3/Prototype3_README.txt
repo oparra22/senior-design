@@ -1,0 +1,1 @@
+This file discusses the 3rd prototype for the embedded firmware. This system is able to transmit a signal to the microcontroller from the GUI. In this prototype, the LEDs on the STK500 turn on when it receives an interrupt. The LEDs are turned on in the RX interrupt service Routine.

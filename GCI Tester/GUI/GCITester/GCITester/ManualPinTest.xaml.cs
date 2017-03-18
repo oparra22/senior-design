@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,7 +40,9 @@ namespace GCITester
         private void testPinButton_Click(object sender, RoutedEventArgs e)
         {
             byte Pin = (byte)Convert.ToInt32(pinNumberTextBox.Text);
+            //MessageBox.Show($"Pin to test = {Pin}");
             Communication.TestPin(Pin);
+            
         }
 
 
@@ -90,7 +93,7 @@ namespace GCITester
             dataBitsLabel.Content = Properties.Settings.Default.DataBits;
         }
         //Not sure if this method is needed.
-        private void OnWindowClosing(object sender, ConsoleCancelEventArgs e)
+        private void OnWindowClosing(object sender, CancelEventArgs e)
         {
             Communication.OnResultComplete -= new Communication.ResultComplete(Communication_OnResultComplete);
         }
