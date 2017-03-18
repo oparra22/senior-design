@@ -53,11 +53,22 @@ namespace GCITester
             Double VoltageRef = Properties.Settings.Default.VoltageReference;
             Byte TestedPin = Communication.PinID;
             Double Voltage = Math.Round((Communication.PinValue * VoltageRef) / 1023.0, 3);
-            MessageBox.Show("Communication on result complete entered");
+            //MessageBox.Show("Communication on result complete entered");
             //AddLog("Testing");
             //AddLog("Pin " + TestedPin.ToString() + " Measured: " + Voltage.ToString() + "V  [0x" + Communication.PinValue.ToString("X4") + "]");
-            manualTestPinResults.Items.Add("Pin " + TestedPin.ToString() + " Measured: " + Voltage.ToString() + "V  [0x" + Communication.PinValue.ToString("X4") + "]");
+            //this.Dispatcher.Invoke(new Action = () => manualTestPinResults.Items.Add("Testing"));
+            //manualTestPinResults.Dispatcher.Invoke(new Action<int>)
+            AddLog("Pin " + TestedPin.ToString() + " Measured: " + Voltage.ToString() + "V  [0x" + Communication.PinValue.ToString("X4") + "]");
+
+
+
+            //manualTestPinResults.Items.Add("Pin " + TestedPin.ToString() + " Measured: " + Voltage.ToString() + "V  [0x" + Communication.PinValue.ToString("X4") + "]");
         }
+
+
+
+
+
 
         private void openPortBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -76,8 +87,15 @@ namespace GCITester
             //{
             //    manualTestPinResults.Items.Add(Text);
             //}));
-            manualTestPinResults.Items.Add(Text);
+
+
+            Dispatcher.BeginInvoke(new Action(delegate ()
+            {
+                manualTestPinResults.Items.Add(Text);
+            }));
         }
+            //manualTestPinResults.Items.Add(Text);
+        
 
         private void frmManualTest_Load(object sender, EventArgs e)
         {
