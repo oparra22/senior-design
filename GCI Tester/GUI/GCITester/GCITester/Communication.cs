@@ -43,7 +43,6 @@ namespace GCITester
         //Method for opening the port
         public static bool OpenPort()
         {
-            //
             try
             {
                 //If Portname is still empty just like it is when it is initialized
@@ -68,12 +67,13 @@ namespace GCITester
                 comPort.Handshake = Handshake.None;
                 comPort.ReadTimeout = 1000;
                 comPort.WriteTimeout = 1000;
-                MessageBox.Show($"baud rate{comPort.BaudRate}");
-                MessageBox.Show($"Data bits{comPort.DataBits}");
-                MessageBox.Show($"Stop Bits{comPort.StopBits}");
-                MessageBox.Show($"Parity{comPort.Parity}");
-                MessageBox.Show($"portName{comPort.PortName}");
-                
+                /********Block for debugging purposese only******/
+                //MessageBox.Show($"baud rate{comPort.BaudRate}");
+                //MessageBox.Show($"Data bits{comPort.DataBits}");
+                //MessageBox.Show($"Stop Bits{comPort.StopBits}");
+                //MessageBox.Show($"Parity{comPort.Parity}");
+                //MessageBox.Show($"portName{comPort.PortName}");
+                /************************************************/
                 //comPort.ReceivedBytesThreshold = 10;
 
                 //This block was also copied, need to double check what it does
@@ -83,14 +83,11 @@ namespace GCITester
                     comPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
                     comPort.ErrorReceived += new SerialErrorReceivedEventHandler(ErrorHandler);
                 }
-
-                //MessageBox.Show("Before port Open");
-                //MessageBox.Show($"Port Before open: {comPort.PortName}");
+                
                 comPort.Open();
-                //MessageBox.Show("After Port Opened");
                 comPort.DtrEnable = true;
                 comPort.RtsEnable = true;
-                MessageBox.Show($"comPort.IsOpen() {comPort.IsOpen}");
+                MessageBox.Show($"Port Open = {comPort.IsOpen}");
                 ClearBuffers();
                 return true;//If try block completes then it was opened successfully, return true
             }//End Try Block
@@ -192,9 +189,11 @@ namespace GCITester
 
                 if (ReadingResult == true && RecvBufferCurIndex >= 5)
                 {
+                    //MessageBox.Show($"Checking end of input{RecvBufferCurIndex} = {RecvBuffer[RecvBufferCurIndex]}");
                     PinID = (Byte)RecvBuffer[StartLoc + 1];
                     PinValue = (RecvBuffer[StartLoc + 2] << 8) | RecvBuffer[StartLoc + 3];
-
+                    //MessageBox.Show($"PinValue = {PinValue}");
+                    MessageBox.Show($"index {StartLoc + 4} = {RecvBuffer[StartLoc + 4]} - index {StartLoc + 5} = {RecvBuffer[StartLoc + 5]}");
                     if (RecvBuffer[StartLoc + 4] == 255 && RecvBuffer[StartLoc + 5] == 255)
                     {
                         if (OnResultComplete != null)
@@ -223,6 +222,15 @@ namespace GCITester
             comPort.Write(Data, 0, 2);
         }
 
+        public static bool ClosePort()
+        {
+            if (comPort.IsOpen == true)
+            {
+                PortOpen = false;
+                comPort.Close();
+            }
+            return true;
+        }
 
 
     }

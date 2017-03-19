@@ -32,69 +32,63 @@ namespace GCITester
             this.Close();
         }
 
+        //
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
 
+        //This method is ran when the "Test Pin" Button is clicked!
+        //Takes in the value the user places in the textbox, then 
+        //sends that pin to the Communication.TestPin() method which
+        //will send the data to the microcontroller to be tested.
         private void testPinButton_Click(object sender, RoutedEventArgs e)
         {
             byte Pin = (byte)Convert.ToInt32(pinNumberTextBox.Text);
-            //MessageBox.Show($"Pin to test = {Pin}");
+            MessageBox.Show($"Pin to test = {Pin}");
             Communication.TestPin(Pin);
             
         }
 
 
-        //background methods
-        //This runs at the end of each 
+        //This occurs when the communication process with the microcontroller is complete
+        //It prints out the results gathered during said communication
         void Communication_OnResultComplete()
         {
             Double VoltageRef = Properties.Settings.Default.VoltageReference;
             Byte TestedPin = Communication.PinID;
             Double Voltage = Math.Round((Communication.PinValue * VoltageRef) / 1023.0, 3);
-            //MessageBox.Show("Communication on result complete entered");
-            //AddLog("Testing");
-            //AddLog("Pin " + TestedPin.ToString() + " Measured: " + Voltage.ToString() + "V  [0x" + Communication.PinValue.ToString("X4") + "]");
-            //this.Dispatcher.Invoke(new Action = () => manualTestPinResults.Items.Add("Testing"));
-            //manualTestPinResults.Dispatcher.Invoke(new Action<int>)
-            AddLog("Pin " + TestedPin.ToString() + " Measured: " + Voltage.ToString() + "V  [0x" + Communication.PinValue.ToString("X4") + "]");
-
-
-
-            //manualTestPinResults.Items.Add("Pin " + TestedPin.ToString() + " Measured: " + Voltage.ToString() + "V  [0x" + Communication.PinValue.ToString("X4") + "]");
+           
+            AddLog("Pin " + TestedPin.ToString() + " Measured: " + Voltage.ToString() + "V  [0x" + Communication.PinValue.ToString("X4") + "]" + "\t Voltage Drop: " + (double)(VoltageRef - Voltage) );
         }
 
 
-
-
-
-
+        //This method runs when the Open Port button is clicked.
         private void openPortBtn_Click(object sender, RoutedEventArgs e)
         {
-            //Calls the Open Port method in the Communicatin.cs file which opens the port that is chosen. (This works correctly)
             Communication.OpenPort();
             manualTestPinResults.Items.Add("Port Opened");
-            //MessageBox.Show("Open Port Method has finished Running! You may now test a pin!");
-            
         }
 
 
         private void AddLog(String Text)
         {
-            //This block was given from GCI Old code
+            //This block is the windows FORM version of the invoke method, as seen in GCI's code, 
             //this.Invoke(new MethodInvoker(delegate
             //{
             //    manualTestPinResults.Items.Add(Text);
             //}));
 
-
+            //The adjusted invoke method needed to prevent a single thread being requested by multiple processes.
+            //It does the same as the block commented out above, just converted for WPF
             Dispatcher.BeginInvoke(new Action(delegate ()
             {
                 manualTestPinResults.Items.Add(Text);
+                manualTestPinResults.Items.MoveCurrentToLast();
+                manualTestPinResults.ScrollIntoView(manualTestPinResults.Items.CurrentItem);
             }));
+
         }
-            //manualTestPinResults.Items.Add(Text);
         
 
         private void frmManualTest_Load(object sender, EventArgs e)
@@ -115,12 +109,5 @@ namespace GCITester
         {
             Communication.OnResultComplete -= new Communication.ResultComplete(Communication_OnResultComplete);
         }
-
-        //Old closing method.
-        //private void frmManualTest_FormClosing(object sender, FormClosingEventArgs e)
-        //{
-        //    Communication.OnResultComplete -= new Communication.ResultComplete(Communication_OnResultComplete);
-        //}
-
     }
 }
