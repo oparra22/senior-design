@@ -303,7 +303,7 @@ namespace GCITester
         {
             var comboBox = sender as ComboBox;
             string stopBitString = comboBox.SelectedValue.ToString();
-            MessageBox.Show($"{Convert.ToInt32(comboBox.SelectedValue)}");
+            //MessageBox.Show($"{Convert.ToInt32(comboBox.SelectedValue)}");
             if (Convert.ToInt32(comboBox.SelectedValue) == 1.5)
             {
                 stopBitString = "OnePointFive";
@@ -357,7 +357,7 @@ namespace GCITester
             //comboBox.ItemsSource = Convert.ToString(serialPortSettings.StopBit);
 
             //serialPortSettings.StopBit = (StopBits)Enum.Parse(typeof(StopBits), stopBitString);
-            MessageBox.Show($"Stop bits after loard {serialPortSettings.StopBit}");
+            //MessageBox.Show($"Stop bits after loard {serialPortSettings.StopBit}");
 
         }
 

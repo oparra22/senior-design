@@ -69,11 +69,11 @@ namespace GCITester
                 comPort.ReadTimeout = 1000;
                 comPort.WriteTimeout = 1000;
                 /********Block for debugging purposese only******/
-                //MessageBox.Show($"baud rate{comPort.BaudRate}");
-                //MessageBox.Show($"Data bits{comPort.DataBits}");
-                //MessageBox.Show($"Stop Bits{comPort.StopBits}");
-                //MessageBox.Show($"Parity{comPort.Parity}");
-                //MessageBox.Show($"portName{comPort.PortName}");
+                //Console.WriteLine($"baud rate{comPort.BaudRate}");
+                //Console.WriteLine($"Data bits{comPort.DataBits}");
+                //Console.WriteLine($"Stop Bits{comPort.StopBits}");
+                //Console.WriteLine($"Parity{comPort.Parity}");
+                //Console.WriteLine($"portName{comPort.PortName}");
                 /************************************************/
                 //comPort.ReceivedBytesThreshold = 10;
 
@@ -88,13 +88,13 @@ namespace GCITester
                 comPort.Open();
                 comPort.DtrEnable = true;
                 comPort.RtsEnable = true;
-                MessageBox.Show($"Port Open = {comPort.IsOpen}");
+                Console.WriteLine($"Port Open = {comPort.IsOpen}");
                 ClearBuffers();
                 return true;//If try block completes then it was opened successfully, return true
             }//End Try Block
             catch
             {
-                MessageBox.Show("catch method ran");
+                Console.WriteLine("catch method ran - Communication.cs");
                 //AddOutput(ex.Message) //Commented out of previous code. debugging purposes. Test!
                 return false;
             }//End catch
@@ -190,12 +190,13 @@ namespace GCITester
 
                 if (ReadingResult == true && RecvBufferCurIndex >= 6)
                 {
-                    MessageBox.Show($"sending");
+                    //For debugging, comment out before final
+                    Console.WriteLine($"Reading Result");
                     PinID1 = (int)RecvBuffer[StartLoc + 1];
                     PinID2 = (int)RecvBuffer[StartLoc + 2];
                     PinValue = (RecvBuffer[StartLoc + 3] << 8) | RecvBuffer[StartLoc + 4];
                     //MessageBox.Show($"PinValue = {PinValue}");
-                    MessageBox.Show($"index {StartLoc + 5} = {RecvBuffer[StartLoc + 5]} - index {StartLoc + 6} = {RecvBuffer[StartLoc + 6]}");
+                    //MessageBox.Show($"index {StartLoc + 5} = {RecvBuffer[StartLoc + 5]} - index {StartLoc + 6} = {RecvBuffer[StartLoc + 6]}");
                     if (RecvBuffer[StartLoc + 5] == 255 && RecvBuffer[StartLoc + 6] == 255)
                     {
                         if (OnResultComplete != null)
@@ -223,7 +224,8 @@ namespace GCITester
             Data[2] = PinID2;
 
             comPort.Write(Data, 0, 3);
-            MessageBox.Show("write finished");
+            //debugging comment out of final
+            Console.WriteLine("TestPin Method Finished");
         }
 
         public static bool ClosePort()
