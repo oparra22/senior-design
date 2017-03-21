@@ -37,7 +37,8 @@ namespace GCITester
 
         private static bool ReadingResult = false;
         private static int StartLoc = 0;
-        public static Byte PinID = 0;
+        public static int PinID1 = 0;
+        public static int PinID2 = 0;
         public static int PinValue = 0;
 
         //Method for opening the port
@@ -176,7 +177,7 @@ namespace GCITester
                 {
                     ReadingResult = true;
                     StartLoc = RecvBufferCurIndex;
-                    /*PinID = (int)indata[i + 1];
+                    /*PinID1 = (int)indata[i + 1];
                     PinValue = (indata[i + 2] << 8) | indata[i + 3];
                     if (OnResultComplete != null)
                         OnResultComplete();
@@ -187,14 +188,15 @@ namespace GCITester
 
                 }
 
-                if (ReadingResult == true && RecvBufferCurIndex >= 5)
+                if (ReadingResult == true && RecvBufferCurIndex >= 6)
                 {
-                    //MessageBox.Show($"Checking end of input{RecvBufferCurIndex} = {RecvBuffer[RecvBufferCurIndex]}");
-                    PinID = (Byte)RecvBuffer[StartLoc + 1];
-                    PinValue = (RecvBuffer[StartLoc + 2] << 8) | RecvBuffer[StartLoc + 3];
+                    MessageBox.Show($"sending");
+                    PinID1 = (int)RecvBuffer[StartLoc + 1];
+                    PinID2 = (int)RecvBuffer[StartLoc + 2];
+                    PinValue = (RecvBuffer[StartLoc + 3] << 8) | RecvBuffer[StartLoc + 4];
                     //MessageBox.Show($"PinValue = {PinValue}");
-                    MessageBox.Show($"index {StartLoc + 4} = {RecvBuffer[StartLoc + 4]} - index {StartLoc + 5} = {RecvBuffer[StartLoc + 5]}");
-                    if (RecvBuffer[StartLoc + 4] == 255 && RecvBuffer[StartLoc + 5] == 255)
+                    MessageBox.Show($"index {StartLoc + 5} = {RecvBuffer[StartLoc + 5]} - index {StartLoc + 6} = {RecvBuffer[StartLoc + 6]}");
+                    if (RecvBuffer[StartLoc + 5] == 255 && RecvBuffer[StartLoc + 6] == 255)
                     {
                         if (OnResultComplete != null)
                             OnResultComplete();
@@ -208,18 +210,20 @@ namespace GCITester
         }
 
         //Function for testing a pin, used in manually test a pin screen
-        public static void TestPin(Byte PinID)
+        public static void TestPin(Byte PinID1, Byte PinID2)
         {
             if(!(comPort.IsOpen == true))
             {
                 OpenPort();
             }
 
-            Byte[] Data = new Byte[2];
+            Byte[] Data = new Byte[3];
             Data[0] = (Byte)'T';
-            Data[1] = PinID;
+            Data[1] = PinID1;
+            Data[2] = PinID2;
 
-            comPort.Write(Data, 0, 2);
+            comPort.Write(Data, 0, 3);
+            MessageBox.Show("write finished");
         }
 
         public static bool ClosePort()

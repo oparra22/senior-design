@@ -44,9 +44,22 @@ namespace GCITester
         //will send the data to the microcontroller to be tested.
         private void testPinButton_Click(object sender, RoutedEventArgs e)
         {
-            byte Pin = (byte)Convert.ToInt32(pinNumberTextBox.Text);
-            MessageBox.Show($"Pin to test = {Pin}");
-            Communication.TestPin(Pin);
+            int PinIn = Convert.ToInt32(pinNumberTextBox.Text);
+            Byte Pin1;
+            Byte Pin2;
+            if(PinIn > 255)
+            {
+                Pin1 = (Byte)255;
+                Pin2 = (Byte)(PinIn - 255);
+            }
+            else
+            {
+                Pin1 = (Byte)PinIn;
+                Pin2 = (Byte)0;
+            }
+            MessageBox.Show($"Pin to test = {PinIn}, Byte1 = {Pin1} Byte2 = {Pin2}");
+
+            Communication.TestPin(Pin1,Pin2);
             
         }
 
@@ -56,7 +69,7 @@ namespace GCITester
         void Communication_OnResultComplete()
         {
             Double VoltageRef = Properties.Settings.Default.VoltageReference;
-            Byte TestedPin = Communication.PinID;
+            int TestedPin = Communication.PinID1 + Communication.PinID2;
             Double Voltage = Math.Round((Communication.PinValue * VoltageRef) / 1023.0, 3);
            
             AddLog("Pin " + TestedPin.ToString() + " Measured: " + Voltage.ToString() + "V  [0x" + Communication.PinValue.ToString("X4") + "]" + "\t Voltage Drop: " + (double)(VoltageRef - Voltage) );
