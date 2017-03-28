@@ -55,15 +55,37 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="lifetimeTest.xaml.cs">
+      <DependentUpon>lifetimeTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="numericUpDown.xaml.cs">
+      <DependentUpon>numericUpDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pinTest.xaml.cs">
+      <DependentUpon>pinTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="productionLimits.xaml.cs">
+      <DependentUpon>productionLimits.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="productionTest.xaml.cs">
+      <DependentUpon>productionTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="reports.xaml.cs">
       <DependentUpon>reports.xaml</DependentUpon>
     </Compile>
     <Compile Include="settings.xaml.cs">
       <DependentUpon>settings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="shortTest.xaml.cs">
+      <DependentUpon>shortTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="tests.xaml.cs">
       <DependentUpon>tests.xaml</DependentUpon>
     </Compile>
+    <Page Include="lifetimeTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -76,11 +98,31 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="numericUpDown.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pinTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="productionLimits.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="productionTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="reports.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="shortTest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

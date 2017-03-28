@@ -30,33 +30,34 @@ namespace GCITester
 
         private void openPort_Click(object sender, RoutedEventArgs e)
         {
-            tests.IsEnabled = true; 
+            testsButton.IsEnabled = true; 
         }
 
-        private void settings_Click(object sender, RoutedEventArgs e)
+        private void settingsButton_Click(object sender, RoutedEventArgs e)
         {
             settings window = new settings();
             window.Show();
             //this.Close();
         }
 
-        private void tests_Click(object sender, RoutedEventArgs e)
+        private void testsButton_Click(object sender, RoutedEventArgs e)
         {
             tests window = new tests();
             window.Show();
             this.Close();
         }
 
-        private void reports_Click(object sender, RoutedEventArgs e)
+        private void reportsButton_Click(object sender, RoutedEventArgs e)
         {
             reports window = new reports();
             window.Show();
             this.Close();
         }
 
-        private void about_Click(object sender, RoutedEventArgs e)
+        private void aboutButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
+
     }
 }

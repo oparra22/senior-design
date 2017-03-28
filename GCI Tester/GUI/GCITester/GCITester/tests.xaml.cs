@@ -26,27 +26,43 @@ namespace GCITester
             InitializeComponent();
         }
 
-        private void pinTest_Click(object sender, RoutedEventArgs e)
+        private void pinTestButton_Click(object sender, RoutedEventArgs e)
+        {
+            pinTest window = new pinTest();
+            window.ShowDialog();
+        }
+
+        private void shortTestButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void productionTest_Click(object sender, RoutedEventArgs e)
+        private void productionTestButton_Click(object sender, RoutedEventArgs e)
         {
-
+            productionTest window = new productionTest();
+            window.ShowDialog();
         }
 
-        private void lifetimeTest_Click(object sender, RoutedEventArgs e)
+        private void lifetimeTestButton_Click(object sender, RoutedEventArgs e)
         {
-
+            lifetimeTest window = new lifetimeTest();
+            window.ShowDialog();
         }
 
-        private void backToMain_Click(object sender, RoutedEventArgs e)
+        private void productionLimits_Click(object sender, RoutedEventArgs e)
         {
-         //   portFlag = 1;
+            productionLimits window = new productionLimits();
+            window.ShowDialog();
+        }
+
+        private void backToMainButton_Click(object sender, RoutedEventArgs e)
+        {
             MainWindow window = new MainWindow();
+            window.testsButton.IsEnabled = true; 
             window.Show();
             this.Close();
         }
+
+        
     }
 }
