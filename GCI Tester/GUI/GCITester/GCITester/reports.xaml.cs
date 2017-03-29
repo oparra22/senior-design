@@ -30,8 +30,8 @@ namespace GCITester
             //  portFlag = 1;
             //MainWindow window = new MainWindow();
             productionReport window = new productionReport();
-            window.ShowDialog();
-            //this.Close();
+            window.Show();
+            this.Close();
         }
 
         private void lifetimeReport_Click(object sender, RoutedEventArgs e)
@@ -41,9 +41,7 @@ namespace GCITester
 
         private void backToMain_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow window = new MainWindow();
-            window.Show();
-            this.Close();
+
         }
     }
 }
