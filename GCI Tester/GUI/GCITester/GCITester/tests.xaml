@@ -5,13 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GCITester"
         mc:Ignorable="d"
-        Title="tests" Height="526.942" Width="331.749">
+        Title="tests" Height="640.192" Width="331.749">
     <Grid>
         <Image x:Name="image" HorizontalAlignment="Left" Height="84" Margin="26,10,0,0" VerticalAlignment="Top" Width="276" Source="GCILogo.jpg" RenderTransformOrigin="0.61,0.535"/>
-        <Button x:Name="lifetimeTest" Content="Lifetime Test" HorizontalAlignment="Left" Margin="50,260,0,0" VerticalAlignment="Top" Width="222" Height="48" Background="#FF15315F" Foreground="#FFFDFDFD" FontSize="20" FontWeight="Bold" FontFamily="Microsoft JhengHei UI" Click="lifetimeTest_Click"/>
-        <Button x:Name="pinTest" Content="Test a Pin" HorizontalAlignment="Left" Margin="50,112,0,0" VerticalAlignment="Top" Width="222" Height="48" Background="#FF15315F" Foreground="#FFFDFDFD" FontSize="20" FontWeight="Bold" FontFamily="Microsoft JhengHei UI" Click="pinTest_Click"/>
-        <Button x:Name="backToMain" Content="Back to Main Menu" HorizontalAlignment="Left" Margin="50,333,0,0" VerticalAlignment="Top" Width="222" Height="48" Background="#FF15315F" Foreground="#FFFDFDFD" FontSize="20" FontWeight="Bold" FontFamily="Microsoft JhengHei UI" Click="backToMain_Click"/>
-        <Button x:Name="productionTest" Content="Production Test" HorizontalAlignment="Left" Margin="50,187,0,0" VerticalAlignment="Top" Width="222" Height="48" Background="#FF15315F" Foreground="#FFFDFDFD" FontSize="20" FontWeight="Bold" FontFamily="Microsoft JhengHei UI" Click="productionTest_Click"/>
+        <Button x:Name="lifetimeTestButton" Content="Lifetime Test" HorizontalAlignment="Left" Margin="50,346,0,0" VerticalAlignment="Top" Width="222" Height="48" Background="#FF15315F" Foreground="#FFFDFDFD" FontSize="20" FontWeight="Bold" FontFamily="Microsoft JhengHei UI" Click="lifetimeTestButton_Click" BorderBrush="#FF15315F"/>
+        <Button x:Name="pinTestButton" Content="Test a Pin" HorizontalAlignment="Left" Margin="50,112,0,0" VerticalAlignment="Top" Width="222" Height="48" Background="#FF15315F" Foreground="#FFFDFDFD" FontSize="20" FontWeight="Bold" FontFamily="Microsoft JhengHei UI" Click="pinTestButton_Click" BorderBrush="#FF15315F"/>
+        <Button x:Name="backToMainButton" Content="Back to Main Menu" HorizontalAlignment="Left" Margin="50,507,0,0" VerticalAlignment="Top" Width="222" Height="48" Background="#FF15315F" Foreground="#FFFDFDFD" FontSize="20" FontWeight="Bold" FontFamily="Microsoft JhengHei UI" Click="backToMainButton_Click" BorderBrush="#FF15315F"/>
+        <Button x:Name="productionTestButton" Content="Production Test" HorizontalAlignment="Left" Margin="50,268,0,0" VerticalAlignment="Top" Width="222" Height="48" Background="#FF15315F" Foreground="#FFFDFDFD" FontSize="20" FontWeight="Bold" FontFamily="Microsoft JhengHei UI" Click="productionTestButton_Click" BorderBrush="#FF15315F"/>
+        <Button x:Name="shortTestButton" Content="Short Test" HorizontalAlignment="Left" Margin="50,190,0,0" VerticalAlignment="Top" Width="222" Height="48" Background="#FF15315F" Foreground="#FFFDFDFD" FontSize="20" FontWeight="Bold" FontFamily="Microsoft JhengHei UI" Click="shortTestButton_Click" BorderBrush="#FF15315F"/>
+        <Button x:Name="productionLimitsButton" Content="Edit Production Limits" HorizontalAlignment="Left" Margin="50,428,0,0" VerticalAlignment="Top" Width="222" Height="48" Background="#FF15315F" Foreground="#FFFDFDFD" FontSize="20" FontWeight="Bold" FontFamily="Microsoft JhengHei UI" Click="productionLimits_Click" BorderBrush="#FF15315F"/>
 
     </Grid>
 </Window>
