@@ -55,8 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="productionReport.xaml.cs">
+    <Compile Include="..\..\..\..\..\..\..\Desktop\GCIBackup\productionReport.xaml.cs">
       <DependentUpon>productionReport.xaml</DependentUpon>
+      <Link>productionReport.xaml.cs</Link>
     </Compile>
     <Compile Include="reports.xaml.cs">
       <DependentUpon>reports.xaml</DependentUpon>
@@ -79,9 +80,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="productionReport.xaml">
+    <Page Include="..\..\..\..\..\..\..\Desktop\GCIBackup\productionReport.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <Link>productionReport.xaml</Link>
     </Page>
     <Page Include="reports.xaml">
       <SubType>Designer</SubType>
