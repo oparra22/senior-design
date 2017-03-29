@@ -14,3 +14,6 @@ C:\Users\oparr\Documents\UCCS\4-Senior\SPRING 2017\senior-design\GCI Tester\GUI\
 C:\Users\oparr\Documents\UCCS\4-Senior\SPRING 2017\senior-design\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.csproj.GenerateResource.Cache
 C:\Users\oparr\Documents\UCCS\4-Senior\SPRING 2017\senior-design\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.exe
 C:\Users\oparr\Documents\UCCS\4-Senior\SPRING 2017\senior-design\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.pdb
+C:\Users\Seth Pearce\Documents\GitHub\senior-design\GCI Tester\GUI\GCITester\GCITester\bin\Debug\GCITester.exe.config
+C:\Users\Seth Pearce\Documents\GitHub\senior-design\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.exe
+C:\Users\Seth Pearce\Documents\GitHub\senior-design\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.pdb
