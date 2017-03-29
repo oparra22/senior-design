@@ -40,3 +40,6 @@ C:\Users\Seth Pearce\Source\Repos\senior-design\GCI Tester\GUI\GCITester\GCITest
 C:\Users\Seth Pearce\Source\Repos\senior-design\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.csproj.GenerateResource.Cache
 C:\Users\Seth Pearce\Source\Repos\senior-design\GCI Tester\GUI\GCITester\GCITester\obj\Debug\productionReport.g.cs
 C:\Users\Seth Pearce\Source\Repos\senior-design\GCI Tester\GUI\GCITester\GCITester\obj\Debug\productionReport.baml
+C:\Users\Owner\Source\Repos\senior-design\GCI Tester\GUI\GCITester\GCITester\bin\Debug\GCITester.exe.config
+C:\Users\Owner\Source\Repos\senior-design\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.exe
+C:\Users\Owner\Source\Repos\senior-design\GCI Tester\GUI\GCITester\GCITester\obj\Debug\GCITester.pdb
