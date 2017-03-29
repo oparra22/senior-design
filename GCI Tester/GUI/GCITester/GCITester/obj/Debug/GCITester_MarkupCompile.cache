@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\oparr\Documents\UCCS\4-Senior\SPRING 2017\senior-design\GCI Tester\GUI\GCITester\GCITester\App.xaml
-21359706647
+101878629160
 
-6504665355
+14-561860849
 13738642453
-MainWindow.xaml;settings.xaml;
+lifetimeTest.xaml;MainWindow.xaml;numericUpDown.xaml;pinTest.xaml;productionLimits.xaml;productionTest.xaml;reports.xaml;settings.xaml;shortTest.xaml;tests.xaml;
 
 False
 

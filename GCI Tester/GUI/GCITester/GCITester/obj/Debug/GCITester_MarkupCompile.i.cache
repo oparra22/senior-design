@@ -9,12 +9,19 @@ GCITester
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\Seth Pearce\Documents\GitHub\senior-design\GCI Tester\GUI\GCITester\GCITester\App.xaml
 21359706647
 
 10-1031658404
+=======
+C:\Users\oparr\Documents\UCCS\4-Senior\SPRING 2017\senior-design\GCI Tester\GUI\GCITester\GCITester\App.xaml
+101878629160
+
+181172552619
+>>>>>>> refs/remotes/origin/master
 13738642453
-MainWindow.xaml;settings.xaml;
+lifetimeTest.xaml;MainWindow.xaml;numericUpDown.xaml;pinTest.xaml;productionLimits.xaml;productionTest.xaml;reports.xaml;settings.xaml;shortTest.xaml;tests.xaml;
 
 True
 

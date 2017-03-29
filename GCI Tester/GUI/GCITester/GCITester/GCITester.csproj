@@ -55,9 +55,43 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+<<<<<<< HEAD
+    <Compile Include="..\..\..\..\..\..\..\Desktop\GCIBackup\productionReport.xaml.cs">
+      <DependentUpon>productionReport.xaml</DependentUpon>
+      <Link>productionReport.xaml.cs</Link>
+=======
+    <Compile Include="lifetimeTest.xaml.cs">
+      <DependentUpon>lifetimeTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="numericUpDown.xaml.cs">
+      <DependentUpon>numericUpDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pinTest.xaml.cs">
+      <DependentUpon>pinTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="productionLimits.xaml.cs">
+      <DependentUpon>productionLimits.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="productionTest.xaml.cs">
+      <DependentUpon>productionTest.xaml</DependentUpon>
+>>>>>>> a0dad8cb5048488c03d9064de5cef867f3dc023d
+    </Compile>
+    <Compile Include="reports.xaml.cs">
+      <DependentUpon>reports.xaml</DependentUpon>
+    </Compile>
     <Compile Include="settings.xaml.cs">
       <DependentUpon>settings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="shortTest.xaml.cs">
+      <DependentUpon>shortTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="tests.xaml.cs">
+      <DependentUpon>tests.xaml</DependentUpon>
+    </Compile>
+    <Page Include="lifetimeTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -70,7 +104,42 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+<<<<<<< HEAD
+    <Page Include="..\..\..\..\..\..\..\Desktop\GCIBackup\productionReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Link>productionReport.xaml</Link>
+=======
+    <Page Include="numericUpDown.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pinTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="productionLimits.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="productionTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+>>>>>>> a0dad8cb5048488c03d9064de5cef867f3dc023d
+    </Page>
+    <Page Include="reports.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="shortTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="tests.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -22,14 +22,42 @@ namespace GCITester
     {
         public MainWindow()
         {
+
             InitializeComponent();
+
+            
         }
 
-        private void button_Copy7_Click(object sender, RoutedEventArgs e)
+        private void openPort_Click(object sender, RoutedEventArgs e)
+        {
+            testsButton.IsEnabled = true; 
+        }
+
+        private void settingsButton_Click(object sender, RoutedEventArgs e)
         {
             settings window = new settings();
             window.Show();
             //this.Close();
         }
+
+        private void testsButton_Click(object sender, RoutedEventArgs e)
+        {
+            tests window = new tests();
+            window.Show();
+            this.Close();
+        }
+
+        private void reportsButton_Click(object sender, RoutedEventArgs e)
+        {
+            reports window = new reports();
+            window.Show();
+            this.Close();
+        }
+
+        private void aboutButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }
