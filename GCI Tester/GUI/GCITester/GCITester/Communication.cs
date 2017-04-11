@@ -157,7 +157,7 @@ namespace GCITester
             byte[] buffer = new byte[sp.BytesToRead];
             int bytesRead = sp.Read(buffer, 0, buffer.Length);
 
-
+            Console.WriteLine($"Bytes read= {bytesRead}");
             // message has successfully been received
             //indata = Encoding.ASCII.GetString(buffer, 0, bytesRead);
 
@@ -169,7 +169,7 @@ namespace GCITester
                 byte Byte = buffer[i];
 
 
-
+                Console.WriteLine($"Byte i = {buffer[i]}");
                 RecvBuffer[RecvBufferCurIndex] = Byte;
 
 
@@ -177,6 +177,7 @@ namespace GCITester
                 {
                     ReadingResult = true;
                     StartLoc = RecvBufferCurIndex;
+                    Console.WriteLine("R read");
                     /*PinID1 = (int)indata[i + 1];
                     PinValue = (indata[i + 2] << 8) | indata[i + 3];
                     if (OnResultComplete != null)
@@ -194,7 +195,17 @@ namespace GCITester
                     Console.WriteLine($"Reading Result");
                     PinID1 = (int)RecvBuffer[StartLoc + 1];
                     PinID2 = (int)RecvBuffer[StartLoc + 2];
+
+                    Console.WriteLine($"buffer[{RecvBufferCurIndex}] = {RecvBuffer[RecvBufferCurIndex]}");
+                    Console.WriteLine($"buffer[{RecvBufferCurIndex+1}] = {RecvBuffer[RecvBufferCurIndex + 1]}");
+                    Console.WriteLine($"buffer[{RecvBufferCurIndex+2}] = {RecvBuffer[RecvBufferCurIndex+2]}");
+                    
+                    
+                    
+                    Console.WriteLine($"PinID1 = {PinID1} PinID2{PinID2} Byte R = {(Byte)'R'}");
                     PinValue = (RecvBuffer[StartLoc + 3] << 8) | RecvBuffer[StartLoc + 4];
+                    Console.WriteLine($"pinValue = {PinValue}");
+
                     //MessageBox.Show($"PinValue = {PinValue}");
                     //MessageBox.Show($"index {StartLoc + 5} = {RecvBuffer[StartLoc + 5]} - index {StartLoc + 6} = {RecvBuffer[StartLoc + 6]}");
                     if (RecvBuffer[StartLoc + 5] == 255 && RecvBuffer[StartLoc + 6] == 255)
